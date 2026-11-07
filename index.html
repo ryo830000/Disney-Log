@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<link rel="apple-touch-icon" href="data:image/png;base64,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"><link rel="icon" type="image/png" href="data:image/png;base64,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">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>パーク記録帳</title>
+<style>
+:root{--bg:#f4f2fc;--card:#fff;--ink:#231e3a;--sub:#6e6a88;--pri:#6c4cf0;--pri2:#ece7ff;--pri3:#d9d0ff;--ok:#1fa971;--ng:#e5484d;--warn:#b57b00;--line:#e6e2f4;--r:16px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;background:var(--bg);color:var(--ink);padding-bottom:calc(76px + env(safe-area-inset-bottom));line-height:1.45}
+button{font:inherit;border:0;border-radius:12px;padding:10px 14px;background:var(--pri);color:#fff;font-weight:700;cursor:pointer;min-height:40px}
+button.ghost{background:var(--pri2);color:var(--pri)}
+button.danger{background:#fde4e4;color:var(--ng)}
+button.link{background:none;color:var(--pri);padding:4px 6px;min-height:0}
+button:disabled{opacity:.35}
+input,select,textarea{font:inherit;font-size:16px;border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:#fff;color:var(--ink);min-width:0;width:100%}
+textarea{min-height:96px;resize:vertical}
+.top{position:sticky;top:0;z-index:20;background:rgba(244,242,252,.94);backdrop-filter:blur(8px);display:flex;align-items:center;gap:6px;padding:calc(8px + env(safe-area-inset-top)) 12px 8px}
+.top h1{margin:0;font-size:19px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.top button{background:none;color:var(--ink);font-size:20px;padding:6px 10px;min-height:40px}
+.hist{display:flex;gap:2px;background:var(--pri2);border-radius:12px;padding:2px;margin-right:12px}
+.top .hist button{font-size:20px;color:var(--pri);padding:4px 10px;min-height:36px;border-radius:10px;font-weight:800}
+.top .hist button:disabled{opacity:.3}
+main{padding:4px 14px 16px;max-width:640px;margin:0 auto}
+.card{background:var(--card);border-radius:var(--r);padding:14px;margin-bottom:12px;box-shadow:0 1px 4px rgba(60,40,140,.07)}
+.card h2{margin:0 0 10px;font-size:15px;display:flex;align-items:center;gap:8px}
+.card h2 .sp{flex:1}
+.row{display:flex;gap:8px;align-items:center}
+.row+.row{margin-top:8px}
+.grow{flex:1}
+.sub{color:var(--sub);font-size:12px}
+.small{font-size:12px;color:var(--sub)}
+.badge{display:inline-block;font-size:12px;background:var(--pri2);color:var(--pri);border-radius:99px;padding:2px 9px;font-weight:700;white-space:nowrap}
+.badge.win,.badge.seen{background:#dcf5ea;color:var(--ok)}
+.badge.lose{background:#fde4e4;color:var(--ng)}
+.badge.wait{background:#fff3cf;color:var(--warn)}
+.badge.skip{background:#eee;color:#777}
+.badge.warn{background:#fff3cf;color:var(--warn)}
+.seg{display:flex;gap:6px;margin-bottom:12px}
+.seg button{flex:1;background:var(--pri2);color:var(--pri);padding:10px 6px;white-space:nowrap}
+.seg button.on{background:var(--pri);color:#fff}
+.seg.small button{padding:8px 4px;font-size:13px}
+nav{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;background:#fff;border-top:1px solid var(--line);padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
+nav button{flex:1;background:none;color:var(--sub);font-size:10px;padding:4px 0;min-height:48px;border-radius:12px;white-space:nowrap;letter-spacing:-.2px}
+nav button span{display:block;font-size:21px;line-height:1.1}
+nav button.on{color:var(--pri);background:var(--pri2)}
+.empty{color:var(--sub);font-size:14px;padding:6px 0}
+/* date nav */
+.datebar{display:flex;align-items:center;gap:6px;margin-bottom:10px}
+.datebar .d{flex:1;text-align:center;font-weight:800;font-size:18px;position:relative}
+.datebar .d input{position:absolute;inset:0;opacity:0;width:100%;height:100%}
+.datebar .d small{display:block;font-weight:600;color:var(--sub);font-size:12px}
+.datebar button{width:44px;padding:8px 0;background:var(--pri2);color:var(--pri);font-size:18px}
+/* area accordion */
+.area{background:var(--card);border-radius:var(--r);margin-bottom:10px;box-shadow:0 1px 4px rgba(60,40,140,.07);overflow:hidden}
+.area>.ah{display:flex;align-items:center;gap:8px;padding:13px 14px;font-weight:800;font-size:15px;cursor:pointer}
+.area>.ah .arrow{color:var(--pri);transition:transform .15s}
+.area.open>.ah .arrow{transform:rotate(90deg)}
+.area>.ah .sp{flex:1}
+.area>.ab{display:none;border-top:1px solid var(--line);padding:0 14px}
+.area.open>.ab{display:block}
+.arow{display:flex;align-items:center;gap:8px;padding:11px 0;border-top:1px solid var(--line)}
+.arow:first-child{border-top:0}
+.arow .an{flex:1;min-width:0;font-size:14px;font-weight:600;word-break:break-word}
+.arow .an small{display:block;font-weight:500;color:var(--sub);font-size:11.5px}
+.arow .info{background:none;color:var(--sub);padding:6px;min-height:36px;font-size:16px}
+.ctr{display:flex;align-items:center;gap:4px}
+.pm{width:42px;height:42px;padding:0;border-radius:50%;font-size:22px;line-height:1}
+.pm.minus{background:var(--pri2);color:var(--pri)}
+.cnt{min-width:30px;text-align:center;font-weight:800;font-size:18px;font-variant-numeric:tabular-nums}
+.cnt.zero{color:#c3bfd6}
+/* tiles */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.stat{background:var(--card);border-radius:14px;padding:12px 6px;text-align:center;box-shadow:0 1px 4px rgba(60,40,140,.07)}
+.stat b{display:block;font-size:22px;line-height:1.2}
+.stat span{font-size:11px;color:var(--sub)}
+.hero{background:linear-gradient(135deg,#7b5cf5,#5a3fe0);color:#fff;border-radius:20px;padding:18px;margin-bottom:12px}
+.hero .t{font-size:13px;opacity:.85}
+.hero .d{font-size:26px;font-weight:800;margin:2px 0 12px}
+.hero button{background:#fff;color:var(--pri);width:100%;padding:13px;font-size:16px}
+.item{display:flex;align-items:center;gap:10px;padding:11px 0;border-top:1px solid var(--line);cursor:pointer}
+.item:first-of-type{border-top:0}
+.item .t{flex:1;min-width:0;word-break:break-word}
+.item .t small{display:block;color:var(--sub);font-size:12px}
+.item .go{color:#bbb6d3}
+.links a{display:flex;align-items:center;gap:10px;padding:13px 4px;border-top:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700}
+.links a:first-of-type{border-top:0}
+.links a small{display:block;font-weight:500;color:var(--sub);font-size:12px}
+.links a .go{margin-left:auto;color:var(--pri)}
+.ico{font-size:22px}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:var(--pri2);color:var(--pri);border-radius:99px;padding:6px 11px;font-size:12.5px;font-weight:700;border:0;min-height:0}
+.chip.on{background:var(--pri);color:#fff}
+.tag{display:inline-block;background:#f0eefa;color:#5b5675;border-radius:8px;padding:3px 8px;font-size:12px;margin:0 4px 4px 0}
+.kv{display:grid;grid-template-columns:84px 1fr;gap:8px 10px;font-size:14px}
+.kv dt{color:var(--sub);font-size:12.5px;padding-top:1px}
+.kv dd{margin:0;word-break:break-word}
+.bars{display:flex;align-items:flex-end;gap:4px;height:90px;margin:8px 0 4px}
+.bars div{flex:1;background:var(--pri3);border-radius:5px 5px 0 0;min-height:3px;position:relative}
+.bars div.best{background:var(--pri)}
+.bars div span{position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--sub);white-space:nowrap}
+/* score */
+.sc{border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:10px}
+.sc .nm{font-weight:800;font-size:14.5px}
+.sc .meta{font-size:12px;color:var(--sub);margin:2px 0 8px}
+.sc input{font-size:20px;font-weight:800;text-align:right}
+.sc .row input.rt{width:96px;flex:none}
+.check{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--line);font-size:14px}
+.check:first-child{border-top:0}
+.check input{width:22px;height:22px;accent-color:var(--pri);flex:none}
+/* sheet & toast */
+#sheet{position:fixed;inset:0;z-index:40;display:none}
+#sheet.on{display:block}
+.sbg{position:absolute;inset:0;background:rgba(20,15,40,.45)}
+.sbody{position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:22px 22px 0 0;padding:16px 16px calc(18px + env(safe-area-inset-bottom));max-height:88vh;overflow:auto;max-width:640px;margin:0 auto}
+.sbody h3{margin:0 0 4px;font-size:17px}
+.sbody label{display:block;font-size:12.5px;color:var(--sub);font-weight:700;margin:14px 0 6px}
+#toast{position:fixed;left:12px;right:12px;bottom:calc(84px + env(safe-area-inset-bottom));z-index:50;display:none;justify-content:center}
+#toast.on{display:flex}
+#toast div{background:#2b2542;color:#fff;border-radius:14px;padding:10px 12px 10px 16px;display:flex;align-items:center;gap:12px;font-size:14px;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:520px}
+#toast button{background:rgba(255,255,255,.16);padding:6px 12px;min-height:0;font-size:13px}
+.mbars{display:flex;align-items:flex-end;gap:5px;height:96px;margin:22px 0 4px}
+.mbars div{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}
+.mbars i{display:block;width:100%;background:var(--pri3);border-radius:5px 5px 0 0;min-height:2px;position:relative}
+.mbars i.top{background:var(--pri)}
+.mbars i b{position:absolute;top:-15px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--sub);font-weight:600}
+.mlab{display:flex;gap:5px}.mlab span{flex:1;text-align:center;font-size:10px;color:var(--sub)}
+.rk{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;border-radius:50%;background:var(--pri2);color:var(--pri);font-weight:800;font-size:13px}
+.rk.r1{background:#ffe27a;color:#7a5a00}.rk.r2{background:#e3e6ee;color:#555b6b}.rk.r3{background:#f2cfae;color:#7b4a1f}
+.sep{height:1px;background:var(--line);margin:14px 0}
+</style>
+</head>
+<body>
+<div class="top">
+  <button id="backBtn" data-act="back" style="display:none" aria-label="戻る">‹</button>
+  <h1 id="title"></h1>
+  <div class="hist"><button id="undoBtn" data-act="undo" disabled aria-label="ひとつ前に戻す">↶</button><button id="redoBtn" data-act="redo" disabled aria-label="やり直す(進む)">↷</button></div>
+  <button id="gearBtn" data-act="gear" aria-label="設定">⚙️</button>
+</div>
+<main id="view"></main>
+<nav id="nav">
+  <button data-act="tab" data-t="home"><span>🏠</span>ホーム</button>
+  <button data-act="tab" data-t="record"><span>✏️</span>記録</button>
+  <button data-act="tab" data-t="attr"><span>🎢</span>アトラクション</button>
+  <button data-act="tab" data-t="score"><span>🎯</span>スコア</button>
+  <button data-act="tab" data-t="archive"><span>📚</span>アーカイブ</button>
+</nav>
+<div id="toast"><div><span id="toastMsg"></span><button id="toastUndo" data-act="undo">元に戻す</button></div></div>
+<div id="sheet"><div class="sbg" data-act="sheetClose"></div><div class="sbody" id="sheetBody"></div></div>
+
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const pad=n=>String(n).padStart(2,"0");
+const ymd=d=>d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+const todayStr=()=>ymd(new Date());
+const parseD=s=>new Date(s+"T00:00:00");
+const WD="日月火水木金土";
+const fmtShort=s=>{const d=parseD(s);return isNaN(d)?s:(d.getMonth()+1)+"/"+d.getDate()+"("+WD[d.getDay()]+")"};
+const fmtLong=s=>{const d=parseD(s);return isNaN(d)?s:d.getFullYear()+"年"+(d.getMonth()+1)+"月"+d.getDate()+"日("+WD[d.getDay()]+")"};
+const addDays=(s,n)=>{const d=parseD(s);d.setDate(d.getDate()+n);return ymd(d)};
+const num=n=>Number(n).toLocaleString("ja-JP");
+const K=(p,n)=>p+"|"+n;
+const splitK=k=>{const i=k.indexOf("|");return [k.slice(0,i),k.slice(i+1)]};
+const enc=k=>encodeURIComponent(k), dec=k=>decodeURIComponent(k);
+
+/* ================= 初期データ(東京ディズニーリゾート公式サイトの掲載内容を要約) ================= */
+const A=(name,type,time,cap,limit,tags,story,note)=>({name,type,time,cap,limit,tags:tags?tags.split(","):[],story,note:note||"",fav:false,memo:""});
+function defaultCat(){return [
+{park:"ランド",areas:[
+ {name:"ワールドバザール",items:[
+  A("オムニバス","ライド・移動","約6分","33名","なし","赤ちゃんOK,スリルなし","20世紀初頭のNY製2階建てバスを縮小再現し、プラザを一周。運転手が7つのテーマランドを紹介します。"),
+  A("ペニーアーケード","ゲーム","","","なし","雨でも安心","20世紀初頭のアメリカのゲームセンターを模した、小銭で遊べるノスタルジックなゲーム機が並ぶ施設。")]},
+ {name:"アドベンチャーランド",items:[
+  A("ウエスタンリバー鉄道","ライド・移動","約15分","140名","身長制限なし","大きな音,暗やみ","蒸気機関車でジャングルや開拓期の西部を抜け、時代をさかのぼるような旅を楽しめる。"),
+  A("カリブの海賊","ライド","約15分","20名","1人で座って安定した姿勢を保てない方は不可","雨でも安心,大きな音,怖いキャラ,暗やみ,スリル","17〜18世紀のカリブ海の海賊を、どこか愛嬌のある姿で描く船旅。ジャック・スパロウたちが待ち受ける。","休止予定: 2027/5/12〜5/25"),
+  A("ジャングルクルーズ：ワイルドライフ・エクスペディション","ライド・移動","約10分","32名","身長制限なし","暗やみ","ゆかいな船長の案内で、野生動物の住むジャングルを船で探検する。夜のナイトクルーズは神秘的な雰囲気も魅力。","休止予定: 2027/1/6〜3/31"),
+  A("スイスファミリー・ツリーハウス","体験型","約8分30秒","","なし","ウォークスルー","嵐で南の孤島に流れ着いた一家が、残された材料で作った大木の家を歩いて巡り、暮らしぶりを見学できる。","休止中(2022/4/1〜未定)"),
+  A("魅惑のチキルーム：スティッチ・プレゼンツ“アロハ・エ・コモ・マイ！”","シアター","約10分","318名","なし","雨でも安心,大きな音,暗やみ","ハワイの鳥たちのショー準備中に、こっそり紛れ込んだスティッチがいたずらを仕掛ける物語。")]},
+ {name:"ウエスタンランド",items:[
+  A("ウエスタンランド・シューティングギャラリー","体験型","","","身長制限なし","ゲーム","西部の酒場風の空間で的を狙う射撃ゲーム。成績に応じてグーフィーの一言入りカードを獲得。"),
+  A("カントリーベア・シアター","シアター","約15分","306名","身長制限なし","雨でも安心,暗やみ","ワールドツアー経験もあるクマ18頭が、カントリー音楽でユーモラスに盛り上げる。手拍子で一緒に楽しめるコンサート。","2026/11/1〜2027/1/16は特別版「ジングルベル・ジャンボリー」"),
+  A("蒸気船マークトウェイン号","ライド・移動","約15分","475名","なし","赤ちゃんOK,スリルなし","白く美しい水上の宮殿のような蒸気船で、アメリカ河をゆったり巡る。夜はライトアップされ、より雰囲気が増す。","休止予定: 2027/5/12〜5/18"),
+  A("トムソーヤ島いかだ","ライド・移動","約1分30秒〜3分","55名","身長制限なし","赤ちゃんOK,スリルなし","丸太のいかだでアメリカ河を渡り、『トム・ソーヤの冒険』の舞台のようなトムソーヤ島を冒険する。"),
+  A("ビッグサンダー・マウンテン","ライド","約4分","30名","身長102cm未満は不可。持病のある方・妊娠中・高齢の方・酔いやすい方は控える","大きな音,暗やみ,スリル,プレミアアクセス","超自然の噂がある廃鉱山を、機関士のいない列車が急旋回と急降下で猛スピードで駆け抜ける。")]},
+ {name:"クリッターカントリー",items:[
+  A("スプラッシュ・マウンテン","ライド","約15分","8名","身長90cm未満は不可。妊娠中・高齢の方・持病のある方・酔いやすい方は控える","暗やみ,スリル,プレミアアクセス","ダム決壊でできた水路を丸太のボートで進み、落差16mの滝を一気に落下するスリルが魅力。","休止予定: 2027/1/7〜2/4"),
+  A("ビーバーブラザーズのカヌー探険","移動・体験","約10分","16名","座った状態で足が床に届かない方は不可","スリルなし","ビーバーの兄弟が始めたカヌー探険で、仲間と力を合わせてアメリカ河を一周する。")]},
+ {name:"ファンタジーランド",items:[
+  A("アリスのティーパーティー","ライド","約1分30秒","4名","身長制限なし","回転,赤ちゃんOK","ハンドルで回すカップに乗り、ドーマウスの顔が出る大きなポットを囲んで、ふしぎの国のお茶会を楽しむ回転ライド。"),
+  A("イッツ・ア・スモールワールド","ライド","約10分","20名","身長制限なし","雨でも安心,赤ちゃんOK","世界各国の子どもたちが歌い踊る幸せな世界を、船でゆったり巡る。旅の終わりに各国の人々のポストカードが飾られる。","休止予定: 2027/5/26〜6/27"),
+  A("キャッスルカルーセル","ライド","約2分","90名","補助なしで座れることが必要","回転","シンデレラ城の近くで、白馬72頭が回る木馬。騎士の競技場風の天蓋に、映画『シンデレラ』の名場面画が並ぶ。"),
+  A("白雪姫と七人のこびと","ライド","約2分30秒","4名","1人で座って安定した姿勢を保てない方は不可","雨でも安心,怖いキャラ,暗やみ","鉱山のトロッコで暗い森を抜け、映画『白雪姫』の世界を巡る。恐ろしい魔女も登場する冒険ライド。"),
+  A("シンデレラのフェアリーテイル・ホール","体験型","約8分","","なし","雨でも安心","シンデレラ城の内部を開放し、玉座やガラスの靴など物語にまつわる展示を見て回れる体験型アトラクション。","休止中(2026/10/1〜未定)"),
+  A("空飛ぶダンボ","ライド","約1分30秒","2名","1人で座って安定した姿勢を保てること(身長制限なし)","回転","耳をからかわれ仲間外れだったダンボが、支えを得て空飛ぶサーカスの人気者に。陽気な空の旅を楽しめる。"),
+  A("美女と野獣“魔法のものがたり”","ライド","約8分","10名","1人で座って安定した姿勢を保てない方は不可","シングルライダー,雨でも安心,大きな音,暗やみ,回転,プレミアアクセス","回転するカップに乗り、映画『美女と野獣』の世界を音楽とともに巡る、真実の愛の物語。"),
+  A("ピーターパン空の旅","ライド","約2分30秒","2名","1人で安定して座れない方は不可。お子さまをひざに乗せての利用は不可","雨でも安心,暗やみ","空飛ぶ海賊船に乗り、ピーターパンたちを追って映画の舞台ネバーランドを巡る旅を楽しめる。","休止予定: 2027/1/6〜2/2"),
+  A("ピノキオの冒険旅行","ライド","約2分","4名","1人で座って安定した姿勢を保てること","雨でも安心,怖いキャラ,暗やみ","木の人形ピノキオが、見守り役たちに導かれながら学び、本物の子どもになるまでの冒険をたどる。"),
+  A("プーさんのハニーハント","ライド","約4分30秒","5名","1人で座って安定した姿勢を保てない方は不可","雨でも安心,大きな音,暗やみ,回転","はちみつ好きのプーさんと一緒に、ハニーポットで100エーカーの森や夢の中をめぐるはちみつ探しの旅。"),
+  A("ホーンテッドマンション","ライド","約15分","3名","なし","雨でも安心,大きな音,怖いキャラ,暗やみ","999人の幽霊が住む不気味な洋館を、ゴーストホストの案内で不吉な乗り物に乗って巡る。","〜2027/1/7 ホリデーナイトメアー実施 / 休止予定: 2027/1/8〜2/4"),
+  A("ミッキーのフィルハーマジック","シアター","約16分","454名","なし","3D,雨でも安心,大きな音,暗やみ","ドナルドの騒動でミッキーのコンサートが予想外の展開に。魔法使いの帽子を追い、アニメーションの世界へ飛び込む3D公演。","休止予定: 2027/3/4〜4/2")]},
+ {name:"トゥーンタウン",items:[
+  A("ガジェットのゴーコースター","ライド","約1分","16名","身長90cm未満は不可。1人で座って安定した姿勢を保てること。持病のある方・妊娠中の方は控える","スリル","天才発明家ガジェットがドングリや廃材を再利用して作った、小さいのに迫力満点のコースター。"),
+  A("グーフィーのペイント＆プレイハウス","体験型","約1分30秒","","なし","雨でも安心","模様替え中のグーフィーに頼まれ、ペンキ噴射装置で壁や家具に色を塗る体験型アトラクション。"),
+  A("チップとデールのツリーハウス","体験型","","","身長制限なし","赤ちゃんOK,スリルなし","いたずら好きなシマリス、チップとデールの住むドングリのカシの木の家を探検できる体験型アトラクション。"),
+  A("トゥーンパーク","体験型","","","身長制限なし","赤ちゃんOK,スリルなし","トゥーンタウンの小さな公園で、柔らかい素材の動物や星の彫刻に登ったりくぐったりして自由に遊べる。"),
+  A("ドナルドのボート","体験型","","","なし","赤ちゃんOK,スリルなし","トゥーンレイクに浮かぶ船で暮らすドナルドの船を探険し、汽笛やベルを鳴らして遊べる体験型アトラクション。"),
+  A("ミニーの家","体験型","","","なし","雨でも安心","紫の屋根の住まいにミッキーとの思い出の品が並ぶ。キッチンの機器に触れたり、庭の願いの井戸を訪ねたりできる。"),
+  A("ロジャーラビットのカートゥーンスピン","ライド","約3分30秒","2名","1人で座って安定した姿勢を保てること","雨でも安心,大きな音,暗やみ,回転,スリル","回転するキャブで裏通りを駆け抜けるが、悪党のイタチがまく毒「ディップ」に注意し、無事に戻れるかが見どころ。","休止予定: 2027/2/8〜3/2")]},
+ {name:"トゥモローランド",items:[
+  A("シュガー・ラッシュ：スウィートレスキュー","ライド","約4分","3名","身長制限なし","雨でも安心,大きな音,暗やみ,回転,プレミアアクセス","キャンディ大王のせいで壊れたお菓子キャラを元に戻し、レースゲームの世界を守る任務に挑むライド。","2027/4/15オープン予定(新規)"),
+  A("スター・ツアーズ：ザ・アドベンチャーズ・コンティニュー","ライド","約4分30秒","40名","身長102cm未満は不可。1人で安定して座れること。持病のある方・妊娠中・高齢の方・酔いやすい方は控える","3D,雨でも安心,大きな音,暗やみ,スリル","銀河帝国が台頭する時代に、スター・ツアーズ社の宇宙船で辺境の惑星へ向かう、予測のつかない宇宙旅行。","休止予定: 2027/2/5〜2/18"),
+  A("スティッチ・エンカウンター","シアター","約12分","163名","身長制限なし","雨でも安心,大きな音,暗やみ","地球に追放されたスティッチのいたずらを、監視モニター越しにユーモラスに見せる作品。","休止: 2026/11/2〜11/30"),
+  A("ベイマックスのハッピーライド","ライド","約1分30秒","3名(大人3名では不可)","身長81cm未満は不可。1人で安定して座れること。子どもをひざに乗せての利用不可","大きな音,回転,スリル,プレミアアクセス","ヒロ開発のケア・ロボットが操縦するビークルで、読めない動きと軽快な音楽を満喫する。"),
+  A("モンスターズ・インク“ライド＆ゴーシーク！”","ライド","約4分","9名","1人で座って安定した姿勢を保てること","雨でも安心,大きな音,暗やみ,回転,プレミアアクセス","フラッシュライトで隠れたモンスターを探すかくれんぼゲーム。トラムに乗り、モンスターズ・インクの世界を巡る。")]}
+]},
+{park:"シー",areas:[
+ {name:"メディテレーニアンハーバー",items:[
+  A("ヴェネツィアン・ゴンドラ","ライド・移動","約11分30秒","16名","身長制限なし","赤ちゃんOK,スリルなし","ゴンドラに乗り陽気なゴンドリエの案内で運河を巡る穏やかな旅。橋の願い事伝説や、すれ違う船へ挨拶する楽しみも。"),
+  A("ソアリン：ファンタスティック・フライト","ライド・シアター","約5分","87名","身長102cm未満は不可。1人で安定して座れること。妊娠中は控える。高所や乗り物酔いが不安な方は控える","雨でも安心,大きな音,暗やみ","飛行博物館の特別展の乗り物に乗り、想像力で大空へ舞い上がり、世界の名所や大自然を巡る空の旅に出る。","休止予定: 2027/4/10〜4/11"),
+  A("ディズニーシー・トランジットスチーマーライン（メディテレーニアンハーバー）","ライド・移動","約7分","49名","なし","赤ちゃんOK,スリルなし","小型の蒸気船でゆったり進む船旅。昼は陽気な音楽、夜は水面に映るテーマポートの灯りが楽しめる。","休止: 2026/8/4〜11/30、2027/5/10〜7/8"),
+  A("フォートレス・エクスプロレーション","体験型","","","身長制限なし","暗やみ,赤ちゃんOK","大航海時代の要塞や停泊中のガリオン船を歩いて探検し、大砲や航海用具を自分で操作して遊べる体験型アトラクション。"),
+  A("フォートレス・エクスプロレーション“ザ・レオナルドチャレンジ”","体験型","","","なし","暗やみ","地図の手がかりで謎を解き、大航海時代の要塞で探険家学会のメンバーを目指す。4種のミッションに挑戦。","実施は12:00から夕刻まで(季節により異なる)")]},
+ {name:"アメリカンウォーターフロント",items:[
+  A("タートル・トーク","シアター","約30分","238名","身長制限なし","雨でも安心,大きな音,暗やみ","ウミガメのクラッシュが海底展望室を訪れ、ハイドロフォンで海の生き物と会話を楽しむ。"),
+  A("タワー・オブ・テラー","ライド","約2分","22名","身長102cm未満は不可。1人で座って安定した姿勢を保てること。持病のある方・妊娠中・高齢の方・酔いやすい方は控える","雨でも安心,大きな音,怖いキャラ,暗やみ,スリル","大富豪が建てたホテルが謎の失踪事件をきっかけに閉鎖され、今は見学ツアーで最上階の真相に迫る。","休止予定: 2027/5/10〜6/30"),
+  A("ディズニーシー・エレクトリックレールウェイ（アメリカンウォーターフロント）","ライド・移動","約2分30秒","42名","身長制限なし","雨でも安心,赤ちゃんOK","かつての米国の公共交通を模した高架鉄道で、ニューヨーク風の街並みから未来のマリーナ、ポートディスカバリーへ向かう。","休止予定: 2027/1/8〜2/10"),
+  A("ディズニーシー・トランジットスチーマーライン（アメリカンウォーターフロント）","ライド・移動","約13分","49名","なし","赤ちゃんOK,スリルなし","小型蒸気船のゆったりした航海で、昼は賑やかな音楽と開放感、夜は水面に映る港の灯りを味わえる。","休止予定: 2027/5/10〜7/8"),
+  A("トイ・ストーリー・マニア！","ライド","約7分","12名","1人で座って安定した姿勢を保てない方は不可","3D,雨でも安心,大きな音,暗やみ,回転,プレミアアクセス","おもちゃサイズになり、アンディのベッド下でウッディたちとシューティングゲームを楽しむ。"),
+  A("ビッグシティ・ヴィークル","ライド・移動","約10分","8〜9名","なし","赤ちゃんOK,スリルなし","初期の自動車に乗り、ニューヨーク風の街並みを観光気分で巡る。ツアーバスやトラックなど多彩な車が走る。","休止: 2026/11/10〜12/25")]},
+ {name:"ポートディスカバリー",items:[
+  A("ディズニーシー・エレクトリックレールウェイ（ポートディスカバリー）","ライド・移動","約2分30秒","42名","身長制限なし","雨でも安心","電動トロリーで20世紀初頭の港町風景を高架から眺めながら巡る。駅舎の壁画も見どころ。","休止予定: 2027/1/8〜2/10"),
+  A("ニモ＆フレンズ・シーライダー","ライド","約5分","122名","身長90cm未満は不可。1人で安定して座れること。妊娠中は控える","雨でも安心,大きな音,暗やみ","魚サイズに縮む潜水艇で海を探検し、ニモやドリーなど人気キャラクターに会える。")]},
+ {name:"ロストリバーデルタ",items:[
+  A("インディ・ジョーンズ・アドベンチャー：クリスタルスカルの魔宮","ライド","約3分","12名","身長117cm未満は不可。1人で安定して座れない方は不可。持病のある方・妊娠中・高齢の方・酔いやすい方は控える","シングルライダー,雨でも安心,大きな音,怖いキャラ,暗やみ,スリル","助手パコの魔宮ツアーで古代遺跡を探険。罠や守護神の呪いを猛スピードで駆け抜けるスリル系ライド。","休止: 〜2026/11/29"),
+  A("ディズニーシー・トランジットスチーマーライン（ロストリバーデルタ）","ライド・移動","約6分","49名","身長制限なし","赤ちゃんOK,スリルなし","小型の蒸気船で、昼は陽気な音楽の活気ある船旅、夜はテーマポートの灯りが映えるロマンティックな航海を楽しめる。","休止予定: 2027/5/10〜7/8"),
+  A("レイジングスピリッツ","ライド","約1分30秒","12名","身長117cm未満と195cm超は不可。持病のある方・妊娠中・高齢の方・酔いやすい方は控える","シングルライダー,大きな音,回転,スリル","誤って向き合わされた水と火の神像の怒りで線路がねじれた古代遺跡を、炎と蒸気の中で猛スピードで疾走する360度ループ。","休止予定: 2027/3/17〜4/10")]},
+ {name:"ファンタジースプリングス",items:[
+  A("アナとエルサのフローズンジャーニー","ライド","約6分30秒","16名","1人で座って安定した姿勢を保てない方は不可","シングルライダー,雨でも安心,暗やみ,スリル,プレミアアクセス","姉妹の愛が永遠の冬に閉ざされた王国を救う冒険を、名曲とともにボートで巡る物語。","休止予定: 2027/4/7〜4/30"),
+  A("ピーターパンのネバーランドアドベンチャー","ライド","約6分","12名","身長102cm未満は不可。1人で安定して座れない方は不可。ひざに子どもを乗せての利用不可","シングルライダー,3D,雨でも安心,暗やみ,回転,プレミアアクセス","ピーターパンやティンカーベルと共にロストキッズとして、フック船長一味からジョンを救う冒険をボートで3D体験する。"),
+  A("フェアリー・ティンカーベルのビジーバギー","ライド","約2分","4名","身長・年齢制限なし(1人で座って安定した姿勢を保てない方は不可)","回転","ティンカーベルの新しい配送サービスを手伝い、ピクシー・ホロウの四季の景色をめぐって妖精に荷物を届ける。"),
+  A("ラプンツェルのランタンフェスティバル","ライド","約5分","16名","なし","暗やみ,プレミアアクセス","映画の名場面をめぐるボートの旅で、ラプンツェルが過ごす特別な一日を追体験できる。")]},
+ {name:"アラビアンコースト",items:[
+  A("キャラバンカルーセル","ライド","約2分30秒","190名","身長制限なし","回転,赤ちゃんOK","アラビアンナイトやアラジンの世界の伝説の動物やジーニーと、宮殿中庭の二層式回転木馬で隊商の旅を楽しめる。"),
+  A("ジャスミンのフライングカーペット","ライド","約1分30秒","4名","1人で座って安定した姿勢を保てること","回転","アラジンのジャスミンの庭園上空を空飛ぶじゅうたんで巡る空中散歩。上下や傾きの変化で自由に飛ぶ感覚を味わえる。"),
+  A("シンドバッド・ストーリーブック・ヴォヤッジ","ライド","約10分","24名","身長制限なし","雨でも安心,暗やみ","船乗りシンドバッドと子トラのチャンドゥが『アラビアンナイト』の国々を航海し、心のコンパスを頼りに最高の宝物を探す冒険。","休止予定: 2027/3/17〜4/16"),
+  A("マジックランプシアター","シアター","約23分","322名","身長制限なし","3D,雨でも安心,大きな音,暗やみ","マジシャンのシャバーンが魔人ジーニーをランプごと箱に閉じ込め、召し使いアシームが救出に挑む宮殿のマジックショー。","休止予定: 2026/12/8〜12/22")]},
+ {name:"マーメイドラグーン",items:[
+  A("アリエルのプレイグラウンド","体験型","","","なし","雨でも安心,大きな音,怖いキャラ,暗やみ","アリエルのお気に入りの海底で、沈没船や海藻の迷路を探険し、秘密の洞窟で宝物に触れられる遊び場。"),
+  A("ジャンピン・ジェリーフィッシュ","ライド","約1分","2名","1人で座って安定した姿勢を保てること","雨でも安心,暗やみ","貝がらに乗り、クラゲたちと海中をふわりと上下に降下する不思議な体験。"),
+  A("スカットルのスクーター","ライド","約1分30秒","2名","身長制限なし。1人で座って安定した姿勢を保てること。子どもをひざに乗せた状態は不可","回転","カモメのスカットルの周りを、ヤドカリの背中に乗ってぐるぐるドライブする。ときどき後ろ向きに走るのが見どころ。"),
+  A("フランダーのフライングフィッシュコースター","ライド","約1分","16名","身長90cm以上。1人で座って安定した姿勢を保てること。持病のある方・妊娠中の方は控える","スリル","フランダーがトビウオたちと作った、潮だまりを駆け抜けるスリル満点のコースター。"),
+  A("ブローフィッシュ・バルーンレース","ライド","約1分30秒","4名","なし","雨でも安心,暗やみ,回転","ふくらんだフグたちが貝がら型ゴンドラを吊るして作った、海中の回転レースに参加できる乗り物。"),
+  A("マーメイドラグーンシアター","シアター","約14分","700名","なし","雨でも安心,大きな音,暗やみ","海底王宮のコンサートで、人間にあこがれるアリエルと仲間たちが映画の名曲を交えて歌う新作ミュージカル。","休止中(2020/7/1〜未定)"),
+  A("ワールプール","ライド","約1分30秒","4名","なし","雨でも安心,暗やみ,回転","イルカとアカエイが渦潮を活かして考案した、海藻製のカップで回転を楽しむ爽快なライド。")]},
+ {name:"ミステリアスアイランド",items:[
+  A("海底2万マイル","ライド","約5分","6名","なし","雨でも安心,大きな音,怖いキャラ,暗やみ","活火山の内部でネモ船長が行う海底研究に加わり、アトランティス大陸の謎を解く探索任務へ小型潜水艇で出発する。","休止予定: 2027/5/10〜6/18"),
+  A("センター・オブ・ジ・アース","ライド","約3分","6名","身長117cm未満は不可。1人で座って安定した姿勢を保てない方は不可。持病のある方・妊娠中・高齢の方・酔いやすい方は控える","大きな音,怖いキャラ,暗やみ,スリル","活火山の洞窟にある天才科学者ネモ船長の研究施設で、地底走行車に乗り地底世界を探検するが、予期せぬ危険に遭遇し猛スピードになる。","休止予定: 2027/1/8〜3/8")]}
+]}];}
+const SH=(park,name,type,lot,period)=>({park,name,type,lot:!!lot,period:period||""});
+function defaultShows(){return [
+ SH("ランド","ディズニー・ハーモニー・イン・カラー","パレード"),
+ SH("ランド","東京ディズニーランド・エレクトリカルパレード・ドリームライツ","パレード",""),
+ SH("ランド","トイズ・ワンダラス・クリスマス！","パレード",""),
+ SH("ランド","ニューイヤーズ・グリーティング","パレード",""),
+ SH("ランド","ミニー＠ファンダーランド","パレード",""),
+ SH("ランド","ジャンボリミッキー！レッツ・ダンス！","ステージショー",1),
+ SH("ランド","ミッキーのマジカルミュージックワールド","ステージショー",1),
+ SH("ランド","The D-Groovationz4 Live: Happy! Funky! Groovy! Tour","ステージショー",1),
+ SH("ランド","ザ・ダイヤモンド・バラエティマスター","ステージショー"),
+ SH("ランド","スカイ・フル・オブ・カラーズ","花火"),
+ SH("ランド","スターブライト・クリスマス","花火",""),
+ SH("ランド","ニューデイ、ニュードリームス","花火",""),
+ SH("ランド","シンデレラ城の環境演出（ミニーのファンダーランド）","環境演出",""),
+ SH("シー","ダンス・ザ・グローブ！","ステージショー",1),
+ SH("シー","ドリームス・テイク・フライト","ステージショー",1),
+ SH("シー","ダッフィー＆フレンズのワンダフル・フレンドシップ","ショーレストラン",""),
+ SH("シー","スパークリング・ジュビリー・セレブレーション","ハーバーショー"),
+ SH("シー","ビリーヴ！～シー・オブ・ドリームス～","ハーバーショー"),
+ SH("シー","ディズニー・クリスマス・グリーティング","ハーバーショー",""),
+ SH("シー","ニューイヤーズ・グリーティング","ハーバーショー",""),
+ SH("シー","【環境演出】スパークリング・ジュビリー・ナイト","環境演出"),
+ SH("シー","スカイ・フル・オブ・カラーズ","花火"),
+ SH("シー","スターブライト・クリスマス","花火",""),
+ SH("シー","ニューデイ、ニュードリームス","花火","")
+];}
+const showTypeOpts=()=>[...new Set(SHOW_TYPES.concat(D.shows.map(x=>x.type)))];
+const SHOW_TYPES=["パレード","ステージショー","ハーバーショー","花火","環境演出","ショーレストラン"];
+const SCORE_DEFAULT=[["ランド","モンスターズ・インク“ライド＆ゴーシーク！”"],["シー","トイ・ストーリー・マニア！"]];
+
+/* ================= データの保存・読み込み ================= */
+const LS="parklog2";
+let D;
+function freshData(){return {ver:2,days:[],scores:[],targets:SCORE_DEFAULT.map(([park,name])=>({park,name})),cat:defaultCat(),shows:defaultShows(),ui:{park:"ランド"}}}
+function save(){try{localStorage.setItem(LS,JSON.stringify(D))}catch(e){}}
+function migrateOld(){
+  let old=null;try{old=JSON.parse(localStorage.getItem("parklog")||"null")}catch(e){}
+  if(!old||!Array.isArray(old.visits))return;
+  old.visits.forEach(v=>{
+    const d=ensureDay(v.date);
+    (v.rides||[]).forEach(r=>{const k=K(v.park,r.name);d.rides[k]=(d.rides[k]||0)+1});
+    (v.lots||[]).forEach(l=>d.shows.push({id:uid(),park:v.park,name:l.name,type:"ステージショー",lot:true,res:l.res,watched:"",spot:"",note:""}));
+    if(v.memo)d.memo=(d.memo?d.memo+"\n":"")+v.memo;
+  });
+  (old.scores||[]).forEach(s=>D.scores.push({id:s.id||uid(),date:s.date,park:s.park,name:s.name,score:s.score,note:s.note||""}));
+}
+(function init(){
+  let raw=null;try{raw=localStorage.getItem(LS)}catch(e){}
+  if(raw){try{D=JSON.parse(raw)}catch(e){D=null}}
+  if(!D||!Array.isArray(D.days)){D=freshData();migrateOld();save()}
+  D.ui=D.ui||{park:"ランド"};D.targets=D.targets||[];D.scores=D.scores||[];
+  if(!D.cat||!D.cat.length)D.cat=defaultCat();if(!D.shows)D.shows=defaultShows();
+})();
+
+/* ================= ヘルパー ================= */
+const dayOf=date=>D.days.find(d=>d.date===date);
+function ensureDay(date){let d=D.days.find(x=>x.date===date);if(!d){d={id:uid(),date,rides:{},shows:[],greets:[],memo:""};D.days.push(d)}return d}
+const rideTotal=d=>Object.values(d.rides).reduce((t,c)=>t+c,0);
+const greetsOf=d=>d?(d.greets||[]):[];
+const allGreets=()=>D.days.flatMap(d=>greetsOf(d).map(g=>({...g,date:d.date})));
+const GREET_DEFAULT=["ミッキー","ミニー","ドナルド","デイジー","グーフィー","プルート","チップ","デール","ダッフィー","シェリーメイ","ジェラトーニ","ステラ・ルー","クッキー・アン","リーナ・ベル"];
+const hasContent=d=>rideTotal(d)>0||d.shows.length>0||greetsOf(d).length>0||(d.memo||"").trim()!==""||D.scores.some(s=>s.date===d.date);
+function dayParks(d){const s=new Set();Object.keys(d.rides).forEach(k=>{if(d.rides[k]>0)s.add(splitK(k)[0])});d.shows.forEach(x=>s.add(x.park));greetsOf(d).forEach(x=>s.add(x.park));D.scores.filter(x=>x.date===d.date).forEach(x=>s.add(x.park));return D.cat.map(c=>c.park).filter(p=>s.has(p)).concat([...s].filter(p=>!D.cat.some(c=>c.park===p)))}
+const getCat=p=>D.cat.find(c=>c.park===p);
+const allItems=()=>D.cat.flatMap(c=>c.areas.flatMap(a=>a.items.map(item=>({park:c.park,area:a.name,item}))));
+function findItem(p,n){const c=getCat(p);if(!c)return null;for(const a of c.areas){const item=a.items.find(i=>i.name===n);if(item)return {park:p,area:a.name,item}}return null}
+function agg(){const m={};D.days.forEach(d=>{for(const k in d.rides){const c=d.rides[k];if(c>0){const x=m[k]||(m[k]={total:0,dates:[]});x.total+=c;x.dates.push({date:d.date,c})}}});Object.values(m).forEach(x=>x.dates.sort((a,b)=>b.date.localeCompare(a.date)));return m}
+function scoreGroups(){const m={};D.scores.forEach(s=>{const k=K(s.park,s.name);(m[k]||(m[k]=[])).push(s)});return m}
+const rateOf=list=>{const r=list.filter(s=>typeof s.rate==="number");return r.length?{n:r.length,best:Math.max(...r.map(s=>s.rate)),avg:Math.round(r.reduce((t,s)=>t+s.rate,0)/r.length*10)/10}:null};
+const rateTxt=r=>typeof r==="number"?r+"%":"";
+const scoreStats=list=>({n:list.length,best:Math.max(...list.map(s=>s.score)),avg:Math.round(list.reduce((t,s)=>t+s.score,0)/list.length),last:list.slice().sort((a,b)=>b.date.localeCompare(a.date))[0]});
+const parkNames=()=>D.cat.map(c=>c.park);
+
+/* ================= 状態・元に戻す ================= */
+const UI={tab:"home",sub:null,stack:[],date:todayStr(),rsec:"rides",open:{},arSeg:"days",year:new Date().getFullYear(),rankPark:"両パーク",attrPark:null,attrQ:"",attrEdit:false,scPark:null,scDate:todayStr(),scManage:false,setPark:null,setSec:"attr",sheet:null};
+const undoStack=[],redoStack=[];
+let toastTimer=null;
+function mutate(fn,msg,label){undoStack.push({s:JSON.stringify(D),l:label||"変更"});if(undoStack.length>60)undoStack.shift();redoStack.length=0;fn();save();render();if(msg)toast(msg,"undo")}
+function restoreFrom(s){D=JSON.parse(s);save();UI.sheet=null;render()}
+function undo(){const e=undoStack.pop();if(!e)return;redoStack.push({s:JSON.stringify(D),l:e.l});restoreFrom(e.s);toast("取り消しました: "+e.l,"redo")}
+function redo(){const e=redoStack.pop();if(!e)return;undoStack.push({s:JSON.stringify(D),l:e.l});restoreFrom(e.s);toast("やり直しました: "+e.l,"undo")}
+function toast(msg,action){const b=$("toastUndo");$("toastMsg").textContent=msg;if(action==="undo"&&undoStack.length){b.textContent="元に戻す";b.dataset.act="undo";b.style.display=""}else if(action==="redo"&&redoStack.length){b.textContent="やり直す";b.dataset.act="redo";b.style.display=""}else b.style.display="none";$("toast").classList.add("on");clearTimeout(toastTimer);toastTimer=setTimeout(()=>$("toast").classList.remove("on"),5000)}
+function openSub(s){if(UI.sub)UI.stack.push(UI.sub);UI.sub=s;UI.attrEdit=false;render();scrollTo(0,0)}
+function goBack(){UI.sub=UI.stack.pop()||null;UI.attrEdit=false;render()}
+function goTab(t){UI.tab=t;UI.sub=null;UI.stack=[];render();scrollTo(0,0)}
+function confirmTap(btn,fn,label){
+  if(btn.dataset.sure){fn();return}
+  const old=btn.textContent;btn.dataset.sure="1";btn.textContent=label||"もう一度タップで削除";
+  setTimeout(()=>{if(btn.isConnected){btn.textContent=old;delete btn.dataset.sure}},2600);
+}
+const seg=(items,cur,act,cls)=>`<div class="seg ${cls||""}">${items.map(([v,l])=>`<button data-act="${act}" data-v="${esc(v)}" class="${v===cur?"on":""}">${esc(l)}</button>`).join("")}</div>`;
+
+/* ================= ホーム ================= */
+function viewHome(){
+  const today=todayStr(),d=dayOf(today),AG=agg();
+  const days=D.days.filter(hasContent).sort((a,b)=>b.date.localeCompare(a.date));
+  const totalRides=days.reduce((t,x)=>t+rideTotal(x),0);
+  const items=allItems().filter(x=>!x.item.closed||AG[K(x.park,x.item.name)]),done=items.filter(x=>AG[K(x.park,x.item.name)]).length;
+  let h=`<div class="hero"><div class="t">今日</div><div class="d">${fmtLong(today)}</div><button data-act="startToday">${d&&hasContent(d)?"今日の記録の続きをつける":"今日の記録をつける"}</button></div>`;
+  if(d&&hasContent(d)){
+    const top=Object.entries(d.rides).filter(e=>e[1]>0).sort((a,b)=>b[1]-a[1]).slice(0,3);
+    const seen=d.shows.filter(s=>s.watched==="seen").length;
+    h+=`<div class="card"><h2>今日の記録 <span class="sp"></span>${dayParks(d).map(p=>`<span class="badge">${esc(p)}</span>`).join("")}</h2>
+    <div class="stats" style="margin-bottom:${top.length?10:0}px"><div class="stat"><b>${rideTotal(d)}</b><span>乗車回数</span></div><div class="stat"><b>${Object.values(d.rides).filter(c=>c>0).length}</b><span>アトラクション</span></div><div class="stat"><b>${seen}</b><span>観た演目</span></div></div>
+    ${top.map(([k,c])=>`<div class="item" data-act="attrOpen" data-k="${enc(k)}"><div class="t">${esc(splitK(k)[1])}<small>${esc(splitK(k)[0])}</small></div><b>${c}回</b></div>`).join("")}
+    <div class="row" style="margin-top:8px"><button class="ghost grow" data-act="dayOpen" data-v="${d.id}">今日の記録を確認</button></div></div>`;
+  }
+  h+=`<div class="stats"><div class="stat"><b>${days.length}</b><span>訪問日数</span></div><div class="stat"><b>${num(totalRides)}</b><span>総乗車回数</span></div><div class="stat"><b>${done}<small style="font-size:12px;color:var(--sub)">/${items.length}</small></b><span>乗った種類</span></div></div>`;
+  h+=`<div class="card"><h2>最近の訪問</h2>${days.slice(0,3).map(dayItem).join("")||'<div class="empty">まだ記録がありません。「今日の記録をつける」から始めましょう。</div>'}${days.length>3?`<div class="row" style="margin-top:8px"><button class="link" data-act="tab" data-t="archive">すべて見る ›</button></div>`:""}</div>`;
+  const sg=scoreGroups(),keys=Object.keys(sg).sort((a,b)=>scoreStats(sg[b]).last.date.localeCompare(scoreStats(sg[a]).last.date)).slice(0,5);
+  h+=`<div class="card"><h2>スコアのベスト ${keys.length?`<span class="sp"></span><button class="link" data-act="tab" data-t="score">記録する ›</button>`:""}</h2>${keys.map(k=>{const st=scoreStats(sg[k]);return `<div class="item" data-act="scoreOpen" data-k="${enc(k)}"><div class="t">${esc(splitK(k)[1])}<small>${esc(splitK(k)[0])}・${st.n}回・平均 ${num(st.avg)}</small></div><b style="color:var(--pri);font-size:17px">🏆 ${num(st.best)}</b></div>`}).join("")||'<div class="empty">スコアの記録はまだありません。</div>'}</div>`;
+  h+=`<div class="card links"><h2>リンク</h2>
+   <a href="https://www.tokyodisneyresort.jp/" target="_blank" rel="noopener"><span class="ico">🏰</span><span>東京ディズニーリゾート公式<small>tokyodisneyresort.jp</small></span><span class="go">›</span></a>
+   <a href="https://disneyreal.asumirai.info/monthly/6month-expect.html" target="_blank" rel="noopener"><span class="ico">📈</span><span>混雑予想(6か月)<small>disneyreal.asumirai.info</small></span><span class="go">›</span></a></div>`;
+  return h;
+}
+function dayItem(d){
+  const seen=d.shows.length;
+  return `<div class="item" data-act="dayOpen" data-v="${d.id}"><div class="t"><b>${fmtShort(d.date)}</b> ${dayParks(d).map(p=>`<span class="badge">${esc(p)}</span>`).join(" ")}<small>乗車 ${rideTotal(d)}回${seen?`・演目 ${seen}件`:""}${(d.memo||"").trim()?"・メモあり":""}</small></div><span class="go">›</span></div>`;
+}
+
+/* ================= 記録 ================= */
+function viewRecord(){
+  const date=UI.date,d=dayOf(date),park=UI.park=(parkNames().includes(D.ui.park)?D.ui.park:parkNames()[0]);
+  const isToday=date===todayStr();
+  let h=`<div class="datebar"><button data-act="dateShift" data-v="-1" aria-label="前の日">‹</button><div class="d">${fmtLong(date)}<small>${isToday?"今日":"タップして日付を選ぶ"}</small><input type="date" id="dateInput" value="${date}" data-change="date"></div><button data-act="dateShift" data-v="1" aria-label="次の日">›</button></div>`;
+  h+=seg(parkNames().map(p=>[p,p]),park,"rpark");
+  const tot=d?rideTotal(d):0,sc=d?d.shows.length:0,gc=greetsOf(d).reduce((t,g)=>t+g.n,0);
+  h+=`<div class="row" style="margin:-2px 2px 10px"><span class="sub grow">この日の合計: 乗車 <b>${tot}</b>回 ・ 演目 <b>${sc}</b>件${gc?` ・ グリーティング <b>${gc}</b>回`:""}</span>${!isToday?`<button class="link" data-act="dateToday">今日へ</button>`:""}</div>`;
+  h+=seg([["rides","アトラクション"],["shows","ショー"],["greet","グリーティング"],["memo","メモ"]],UI.rsec,"rsec","small");
+  if(UI.rsec==="rides")h+=recRides(d,park);
+  else if(UI.rsec==="shows")h+=recShows(d,park);
+  else if(UI.rsec==="greet")h+=recGreet(d,park);
+  else h+=`<div class="card"><h2>この日のメモ</h2><textarea id="dayMemo" placeholder="食べたもの、思い出、次回やりたいこと など" data-input="dayMemo">${esc(d?d.memo:"")}</textarea><div class="small" style="margin-top:6px">入力すると自動で保存されます。</div></div>`;
+  return h;
+}
+function recRides(d,park){
+  const c=getCat(park);if(!c)return '<div class="empty">リストがありません</div>';
+  return c.areas.map(a=>{
+    const vis=a.items.filter(i=>!i.closed);if(!vis.length)return "";const sum=vis.reduce((t,i)=>t+(d?(d.rides[K(park,i.name)]||0):0),0);
+    const ok=K("rec",park+"|"+a.name),isOpen=ok in UI.open?UI.open[ok]:sum>0;
+    return `<div class="area ${isOpen?"open":""}"><div class="ah" data-act="tog" data-v="${enc(ok)}"><span class="arrow">▸</span><span>${esc(a.name)}</span><span class="sp"></span>${sum?`<span class="badge">${sum}回</span>`:`<span class="sub">${vis.length}</span>`}</div><div class="ab">${vis.map(i=>{
+      const k=K(park,i.name),n=d?(d.rides[k]||0):0;
+      return `<div class="arow"><div class="an">${esc(i.name)}</div><button class="info" data-act="attrOpen" data-k="${enc(k)}" aria-label="詳細">ⓘ</button><div class="ctr"><button class="pm minus" data-act="dec" data-k="${enc(k)}" ${n?"":"disabled"} aria-label="減らす">−</button><span class="cnt ${n?"":"zero"}">${n}</span><button class="pm" data-act="inc" data-k="${enc(k)}" aria-label="増やす">＋</button></div></div>`}).join("")}</div></div>`}).join("")
+   +`<div class="small" style="text-align:center;margin-top:4px">間違えたら「−」で減らせます。右上の「↩ 戻す」でひとつ前の状態に戻せます。</div>`;
+}
+const SHOW_BADGE={seen:["観た","seen"],skip:["観ていない","skip"]};
+const RES_BADGE={win:["当選","win"],lose:["落選","lose"],wait:["結果待ち","wait"],none:["未応募","skip"]};
+function showBadges(s){return (s.res&&RES_BADGE[s.res]?`<span class="badge ${RES_BADGE[s.res][1]}">${RES_BADGE[s.res][0]}</span> `:"")+(s.watched&&SHOW_BADGE[s.watched]?`<span class="badge ${SHOW_BADGE[s.watched][1]}">${SHOW_BADGE[s.watched][0]}</span>`:"")}
+function recGreet(d,park){
+  const recs=greetsOf(d).filter(g=>g.park===park),all=allGreets();
+  const cnt={};all.forEach(g=>{cnt[g.who]=(cnt[g.who]||0)+g.n});
+  const freq=Object.keys(cnt).sort((a,b)=>cnt[b]-cnt[a]).slice(0,8);
+  const chips=freq.length?freq:GREET_DEFAULT.slice(0,8);
+  const names=[...new Set(freq.concat(GREET_DEFAULT))],c=getCat(park);
+  const places=[...new Set(all.filter(g=>g.park===park&&g.place).map(g=>g.place).concat(c?c.areas.map(a=>a.name):[]))];
+  let h=`<div class="card"><h2>グリーティングを記録</h2><label>誰と</label><input id="grWho" data-keep="1" list="grNames" placeholder="キャラクター名" autocomplete="off"><div class="chips" style="margin-top:8px">${chips.map(n=>`<button class="chip" data-act="grChip" data-v="${esc(n)}">${esc(n)}</button>`).join("")}</div>
+  <label>どこで</label><input id="grPlace" data-keep="1" list="grPlaces" placeholder="場所(例: ミッキーの家)" autocomplete="off">
+  <datalist id="grNames">${names.map(n=>`<option value="${esc(n)}">`).join("")}</datalist><datalist id="grPlaces">${places.map(n=>`<option value="${esc(n)}">`).join("")}</datalist>
+  <div class="row" style="margin-top:12px"><button class="grow" data-act="grAdd">会った(＋1回)</button></div><div class="small" style="margin-top:6px">同じ日に同じ相手・同じ場所で記録すると、回数が増えます。</div></div>`;
+  h+=`<div class="card"><h2>この日の記録 <span class="badge">${recs.reduce((t,g)=>t+g.n,0)}回</span></h2>${recs.length?recs.map(g=>`<div class="arow"><div class="an" data-act="greetEdit" data-v="${g.id}">${esc(g.who)}<small>${esc(g.place||"場所なし")}${g.note?"・"+esc(g.note):""}</small></div><div class="ctr"><button class="pm minus" data-act="greetDec" data-v="${g.id}" aria-label="減らす">−</button><span class="cnt">${g.n}</span><button class="pm" data-act="greetInc" data-v="${g.id}" aria-label="増やす">＋</button></div></div>`).join(""):'<div class="empty">まだ記録がありません。</div>'}<div class="small" style="margin-top:6px">名前の部分をタップすると、修正・削除できます。</div></div>`;
+  return h;
+}
+function recShows(d,park){
+  const recs=d?d.shows.filter(s=>s.park===park):[];
+  let h=`<div class="card"><h2>この日の記録 <span class="badge">${recs.length}件</span></h2>${recs.length?recs.map(s=>`<div class="item" data-act="showEdit" data-v="${s.id}"><div class="t">${esc(s.name)}<small>${s.type}${s.spot?"・"+esc(s.spot):""}${s.note?"・"+esc(s.note):""}</small></div><div>${showBadges(s)}</div></div>`).join(""):'<div class="empty">下の一覧から追加できます。</div>'}</div>`;
+  const list=D.shows.filter(x=>x.park===park&&!x.ended);
+  const types=SHOW_TYPES.filter(t=>list.some(x=>x.type===t)).concat([...new Set(list.map(x=>x.type))].filter(t=>!SHOW_TYPES.includes(t)));
+  h+=types.map(t=>`<div class="card"><h2>${esc(t)}</h2>${list.filter(x=>x.type===t).map(x=>{
+    const ex=recs.filter(s=>s.name===x.name);
+    return `<div class="arow"><div class="an">${esc(x.name)}${x.lot?`<small>抽選・エントリー対象</small>`:""}</div>${ex.length?`<button class="ghost" data-act="showEdit" data-v="${ex[0].id}">✓ 記録済み</button>`:(x.lot?`<button data-act="showAdd" data-n="${enc(x.name)}">記録</button>`:`<button class="ghost" data-act="showAdd" data-n="${enc(x.name)}">詳細</button><button data-act="showQuick" data-n="${enc(x.name)}">観た</button>`)}</div>`}).join("")}</div>`).join("");
+  h+=`<div class="row"><button class="ghost grow" data-act="showAdd" data-n="">＋ 一覧にない演目を記録</button></div>`;
+  return h;
+}
+
+/* ================= アトラクション ================= */
+function attrListHTML(){
+  const park=UI.attrPark=(parkNames().includes(UI.attrPark)?UI.attrPark:parkNames()[0]),c=getCat(park),AG=agg(),q=UI.attrQ.trim().toLowerCase();
+  if(!c)return "";
+  const row=(i,areaName,showArea)=>{const x=AG[K(park,i.name)];return `<div class="arow" data-act="attrOpen" data-k="${enc(K(park,i.name))}" style="cursor:pointer"><div class="an">${i.fav?"⭐ ":""}${esc(i.name)}<small>${showArea?esc(areaName)+"・":""}${esc(i.type||"")}${i.time?"・"+esc(i.time):""}</small></div>${x?`<span class="badge">${x.total}回</span>`:""}<span class="go" style="color:#bbb6d3">›</span></div>`};
+  const out=c.areas.map(a=>{
+    const its=a.items.filter(i=>!i.closed&&(!q||i.name.toLowerCase().includes(q)));
+    if(!its.length)return "";
+    return `<div class="area open"><div class="ah" style="cursor:default"><span>${esc(a.name)}</span><span class="sp"></span><span class="sub">${its.length}件</span></div><div class="ab">${its.map(i=>row(i,a.name,false)).join("")}</div></div>`}).join("");
+  const closed=c.areas.flatMap(a=>a.items.filter(i=>i.closed&&(!q||i.name.toLowerCase().includes(q))).map(i=>[i,a.name]));
+  const ck=K("closed",park),cOpen=ck in UI.open?UI.open[ck]:!!q;
+  const cl=closed.length?`<div class="area ${cOpen?"open":""}"><div class="ah" data-act="tog" data-v="${enc(ck)}"><span class="arrow">▸</span><span>クローズ済み</span><span class="sp"></span><span class="sub">${closed.length}件</span></div><div class="ab">${closed.map(([i,an])=>row(i,an,true)).join("")}</div></div>`:"";
+  return (out+cl)||'<div class="empty">見つかりませんでした</div>';
+}
+function viewAttr(){
+  const park=UI.attrPark=(parkNames().includes(UI.attrPark)?UI.attrPark:parkNames()[0]);
+  return seg(parkNames().map(p=>[p,p]),park,"apark")+`<input id="attrQ" type="search" placeholder="アトラクション名で検索" value="${esc(UI.attrQ)}" data-input="attrQ" style="margin-bottom:12px"><div id="attrList">${attrListHTML()}</div>`;
+}
+function viewAttrDetail(k){
+  const [p,n]=splitK(k),f=findItem(p,n);
+  if(!f)return '<div class="card"><div class="empty">このアトラクションは一覧から削除されています。</div></div>';
+  const i=f.item,AG=agg(),x=AG[k],sc=scoreGroups()[k],ed=UI.attrEdit;
+  const fld=(label,key,multi)=>ed?`<dt>${label}</dt><dd>${multi?`<textarea data-change="attrf" data-f="${key}" data-k="${enc(k)}">${esc(i[key])}</textarea>`:`<input data-change="attrf" data-f="${key}" data-k="${enc(k)}" value="${esc(key==="tags"?i.tags.join(","):i[key])}">`}</dd>`:`<dt>${label}</dt><dd>${esc(key==="tags"?"":i[key])||"—"}</dd>`;
+  let h=`<div class="card"><div class="row"><div class="grow"><span class="badge">${esc(p)}</span> <span class="badge">${esc(f.area)}</span>${i.closed?`<span class="badge skip">クローズ済み</span> `:""}<div style="font-size:19px;font-weight:800;margin-top:6px;word-break:break-word">${esc(i.name)}</div></div><button class="ghost" data-act="fav" data-k="${enc(k)}" style="font-size:20px;padding:8px 12px">${i.fav?"⭐":"☆"}</button></div></div>`;
+  h+=`<div class="card"><h2>あなたの記録</h2><div class="stats" style="margin-bottom:8px"><div class="stat"><b>${x?x.total:0}</b><span>累計乗車回数</span></div><div class="stat"><b>${x?x.dates.length:0}</b><span>乗った日数</span></div><div class="stat"><b style="font-size:16px;line-height:1.6">${x?fmtShort(x.dates[0].date):"—"}</b><span>最後に乗った日</span></div></div>
+   ${x?x.dates.slice(0,8).map(e=>`<div class="item" data-act="dayOpenDate" data-v="${e.date}"><div class="t">${fmtLong(e.date)}</div><b>${e.c}回</b><span class="go">›</span></div>`).join("")+(x.dates.length>8?`<div class="small">ほか ${x.dates.length-8}日分</div>`:""):'<div class="empty">まだ乗っていません。</div>'}
+   ${sc?(()=>{const st=scoreStats(sc);return `<div class="sep"></div><div class="item" data-act="scoreOpen" data-k="${enc(k)}"><div class="t">スコア記録あり<small>${st.n}回・平均 ${num(st.avg)}</small></div><b style="color:var(--pri)">🏆 ${num(st.best)}</b><span class="go">›</span></div>`})():""}</div>`;
+  h+=`<div class="card"><h2>基本情報 <span class="sp"></span><button class="link" data-act="attrEdit">${ed?"編集を終える":"情報を編集"}</button></h2><dl class="kv">${fld("種類","type")}${fld("所要時間","time")}${fld("定員","cap")}${fld("利用制限","limit",true)}${ed?`<dt>特徴(カンマ区切り)</dt><dd><input data-change="attrf" data-f="tags" data-k="${enc(k)}" value="${esc(i.tags.join(","))}"></dd>`:`<dt>特徴</dt><dd>${i.tags.length?i.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join(""):"—"}</dd>`}</dl><div class="small" style="margin-top:10px">出典: 東京ディズニーリゾート公式サイト(2026年11月7日時点)</div></div>`;
+  h+=`<div class="card"><h2>BGS</h2>${ed?`<textarea data-change="attrf" data-f="story" data-k="${enc(k)}" style="min-height:130px">${esc(i.story)}</textarea>`:`<div style="font-size:14.5px">${esc(i.story)||'<span class="sub">未入力(「情報を編集」から書けます)</span>'}</div><div class="small" style="margin-top:8px">公式の紹介文を要約したものです。</div>`}</div>`;
+  h+=`<div class="card"><h2>自分用メモ</h2><textarea data-input="attrMemo" data-k="${enc(k)}" placeholder="おすすめの乗り方・席・待ち時間のコツ など">${esc(i.memo)}</textarea></div>`;
+  return h;
+}
+
+/* ================= スコア ================= */
+function viewScore(){
+  const AGs=scoreGroups(),date=UI.scDate;
+  let h=`<div class="card"><h2>クイック記録 <span class="sp"></span><span class="sub">記録日</span><input type="date" id="scDate" value="${date}" data-change="scDate" style="width:auto;padding:6px 8px;font-size:14px"></h2>`;
+  if(!D.targets.length)h+=`<div class="empty">まだ記録するアトラクションが選ばれていません。下の「記録するアトラクションの追加・削除」から選んでください。</div>`;
+  D.targets.forEach((t,idx)=>{
+    const list=AGs[K(t.park,t.name)],st=list?scoreStats(list):null;
+    h+=`<div class="sc"><div class="nm">${esc(t.name)}</div><div class="meta">${esc(t.park)}${st?`・ベスト ${num(st.best)}・平均 ${num(st.avg)}${(()=>{const r=rateOf(list);return r?`・ヒット率ベスト ${r.best}%`:""})()}・${st.n}回`:"・まだ記録なし"}</div><div class="row"><input data-keep="1" id="sc${idx}" type="number" inputmode="numeric" placeholder="スコア" data-enter="${idx}"><input class="rt" data-keep="1" id="sr${idx}" type="number" inputmode="decimal" step="0.1" placeholder="ヒット%" data-enter="${idx}"><button data-act="scoreAdd" data-i="${idx}" style="min-width:72px">記録</button></div></div>`});
+  h+=`</div>`;
+  h+=`<div class="card"><h2>記録するアトラクションの追加・削除 <span class="sp"></span><button class="link" data-act="scManage">${UI.scManage?"閉じる":"開く"}</button></h2>`;
+  if(UI.scManage){
+    const park=UI.scPark=(parkNames().includes(UI.scPark)?UI.scPark:parkNames()[0]);
+    h+=seg(parkNames().map(p=>[p,p]),park,"scpark","small")+`<div class="small" style="margin-bottom:6px">チェックを入れると上のクイック記録に出ます。外しても、これまでの記録は消えません。</div>`;
+    const c=getCat(park);
+    if(c)h+=c.areas.map(a=>`<div style="font-weight:800;font-size:13px;color:var(--sub);margin:12px 0 2px">${esc(a.name)}</div>`+a.items.filter(i=>!i.closed||D.targets.some(t=>t.park===park&&t.name===i.name)).map(i=>{const on=D.targets.some(t=>t.park===park&&t.name===i.name);return `<label class="check"><input type="checkbox" data-change="target" data-k="${enc(K(park,i.name))}" ${on?"checked":""}><span>${esc(i.name)}</span></label>`}).join("")).join("");
+  }else h+=`<div class="small">選んだアトラクションが、このタブの上に並びます。</div>`;
+  h+=`</div><div class="row"><button class="ghost grow" data-act="arSegGo" data-v="score">スコアの履歴を見る(アーカイブ)</button></div>`;
+  return h;
+}
+function viewScoreDetail(k){
+  const list=(scoreGroups()[k]||[]).slice().sort((a,b)=>b.date.localeCompare(a.date)||0),[p,n]=splitK(k);
+  if(!list.length)return `<div class="card"><div class="empty">記録がありません。</div></div>`;
+  const st=scoreStats(list),recent=list.slice(0,12).reverse(),mx=Math.max(...recent.map(s=>s.score))||1;
+  let h=`<div class="card"><span class="badge">${esc(p)}</span><div style="font-size:19px;font-weight:800;margin:6px 0 10px;word-break:break-word">${esc(n)}</div><div class="stats" style="margin-bottom:6px"><div class="stat"><b style="color:var(--pri)">${num(st.best)}</b><span>ベスト</span></div><div class="stat"><b>${num(st.avg)}</b><span>平均</span></div><div class="stat"><b>${st.n}</b><span>記録回数</span></div></div>${(()=>{const r=rateOf(list);return r?`<div class="stats" style="margin-bottom:6px"><div class="stat"><b style="color:var(--pri)">${r.best}%</b><span>ヒット率ベスト</span></div><div class="stat"><b>${r.avg}%</b><span>ヒット率平均</span></div><div class="stat"><b>${r.n}</b><span>ヒット率の記録</span></div></div>`:""})()}
+  <div class="small">最近の記録(古い順)</div><div class="bars" style="margin-top:22px">${recent.map(s=>`<div class="${s.score===st.best?"best":""}" style="height:${Math.max(4,Math.round(s.score/mx*100))}%" title="${s.date} ${s.score}"><span>${num(s.score)}</span></div>`).join("")}</div></div>`;
+  h+=`<div class="card"><h2>日ごとの記録</h2>${list.map(s=>`<div class="item" data-act="scoreEdit" data-v="${s.id}"><div class="t">${fmtLong(s.date)}<small>${esc(s.note||"")}${s.score===st.best?(s.note?"・":"")+"🏆 ベスト":""}</small></div><b style="font-size:17px">${num(s.score)}${typeof s.rate==="number"?`<small style="display:block;font-size:12px;color:var(--sub);font-weight:700;text-align:right">ヒット ${s.rate}%</small>`:""}</b><span class="go">›</span></div>`).join("")}<div class="small" style="margin-top:6px">行をタップすると、修正・削除できます。</div></div>`;
+  return h;
+}
+
+/* ================= アーカイブ ================= */
+function viewArchive(){
+  let h=seg([["days","日ごと"],["year","年間"],["score","スコア"]],UI.arSeg,"arseg");
+  if(UI.arSeg==="year")return h+viewYear();
+  if(UI.arSeg==="days"){
+    const days=D.days.filter(hasContent).sort((a,b)=>b.date.localeCompare(a.date));
+    if(!days.length)return h+`<div class="card"><div class="empty">まだ記録がありません。</div></div>`;
+    let cur="";
+    days.forEach(d=>{const m=d.date.slice(0,7);if(m!==cur){cur=m;h+=`<div class="sub" style="font-weight:800;margin:14px 4px 6px">${cur.slice(0,4)}年${+cur.slice(5)}月</div>`}
+      h+=`<div class="card" style="padding:4px 14px;margin-bottom:8px">${dayItem(d)}</div>`});
+    return h;
+  }
+  const sg=scoreGroups(),keys=Object.keys(sg).sort((a,b)=>sg[b].length-sg[a].length);
+  if(!keys.length)return h+`<div class="card"><div class="empty">スコアの記録がありません。</div></div>`;
+  return h+`<div class="card">${keys.map(k=>{const st=scoreStats(sg[k]);return `<div class="item" data-act="scoreOpen" data-k="${enc(k)}"><div class="t">${esc(splitK(k)[1])}<small>${esc(splitK(k)[0])}・${st.n}回・平均 ${num(st.avg)}・最終 ${fmtShort(st.last.date)}</small></div><b style="color:var(--pri);font-size:17px">🏆 ${num(st.best)}</b><span class="go">›</span></div>`}).join("")}</div>`;
+}
+function yearOf(y){
+  const days=D.days.filter(d=>d.date.slice(0,4)===String(y)&&hasContent(d)),rides={};
+  days.forEach(d=>{for(const k in d.rides)if(d.rides[k]>0)rides[k]=(rides[k]||0)+d.rides[k]});
+  return {days,rides};
+}
+function rankRows(rides,park){
+  const list=Object.entries(rides).filter(([k])=>park==="両パーク"||splitK(k)[0]===park).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
+  return list.map(([k,c])=>({k,c,r:1+list.filter(x=>x[1]>c).length}));
+}
+const rankItem=(x,both)=>`<div class="item" data-act="attrOpen" data-k="${enc(x.k)}"><span class="rk ${x.r<=3?"r"+x.r:""}">${x.r}</span><div class="t">${esc(splitK(x.k)[1])}${both?`<small>${esc(splitK(x.k)[0])}</small>`:""}</div><b style="font-size:16px">${x.c}回</b></div>`;
+function viewYear(){
+  const y=UI.year,{days,rides}=yearOf(y),total=Object.values(rides).reduce((t,c)=>t+c,0);
+  const ys=[...new Set(D.days.filter(hasContent).map(d=>+d.date.slice(0,4)).concat(D.scores.map(s=>+s.date.slice(0,4))))];
+  const minY=Math.min(new Date().getFullYear(),...ys),maxY=Math.max(new Date().getFullYear(),...ys);
+  let h=`<div class="datebar"><button data-act="yearShift" data-v="-1" ${y<=minY?"disabled":""}>‹</button><div class="d">${y}年<small>の記録</small></div><button data-act="yearShift" data-v="1" ${y>=maxY?"disabled":""}>›</button></div>`;
+  const rideDays=days.filter(d=>rideTotal(d)>0).length;
+  const parkDays=parkNames().map(p=>[p,days.filter(d=>dayParks(d).includes(p)).length]);
+  h+=`<div class="stats"><div class="stat"><b>${days.length}</b><span>訪問回数(日)</span></div><div class="stat"><b>${num(total)}</b><span>総乗車回数</span></div><div class="stat"><b>${Object.keys(rides).length}</b><span>乗った種類</span></div></div>`;
+  h+=`<div class="card"><h2>内訳</h2><div class="row" style="flex-wrap:wrap;gap:6px 14px;font-size:14px">${parkDays.map(([p,n])=>`<span><b>${esc(p)}</b> ${n}日 / ${num(Object.entries(rides).filter(([k])=>splitK(k)[0]===p).reduce((t,e)=>t+e[1],0))}回</span>`).join("")}<span><b>1日平均</b> ${rideDays?(total/rideDays).toFixed(1):"0"}回</span></div></div>`;
+  const mon=Array(12).fill(0);days.forEach(d=>{mon[+d.date.slice(5,7)-1]+=rideTotal(d)});const mm=Math.max(...mon,1);
+  h+=`<div class="card"><h2>月ごとの乗車回数</h2><div class="mbars">${mon.map(v=>`<div><i class="${v&&v===mm?"top":""}" style="height:${v?Math.max(4,Math.round(v/mm*100)):0}%">${v?`<b>${v}</b>`:""}</i></div>`).join("")}</div><div class="mlab">${mon.map((v,i)=>`<span>${i+1}</span>`).join("")}</div></div>`;
+  const rp=UI.rankPark,rows=rankRows(rides,rp);
+  h+=`<div class="card"><h2>回数ランキング TOP5</h2>${seg([["両パーク","両パーク"],...parkNames().map(p=>[p,p])],rp,"rankpark","small")}${rows.length?rows.slice(0,5).map(x=>rankItem(x,rp==="両パーク")).join(""):'<div class="empty">この年の乗車記録はありません。</div>'}${rows.length>5?`<div class="row" style="margin-top:8px"><button class="ghost grow" data-act="rankOpen">すべてのランキングを見る(${rows.length}件)</button></div>`:""}</div>`;
+  const sh=days.flatMap(d=>d.shows),seen=sh.filter(x=>x.watched==="seen").length,win=sh.filter(x=>x.res==="win").length,lose=sh.filter(x=>x.res==="lose").length;
+  h+=`<div class="card"><h2>ショー・パレード</h2><div class="stats" style="margin:0"><div class="stat"><b>${seen}</b><span>観た演目</span></div><div class="stat"><b>${win}<small style="font-size:12px;color:var(--sub)">/${win+lose}</small></b><span>抽選の当選/結果確定</span></div><div class="stat"><b>${win+lose?Math.round(win/(win+lose)*100)+"%":"—"}</b><span>当選率</span></div></div></div>`;
+  const gy=allGreets().filter(g=>g.date.slice(0,4)===String(y)),gt=gy.reduce((t,g)=>t+g.n,0),gm={};gy.forEach(g=>{const o=gm[g.who]||(gm[g.who]={n:0,pl:{}});o.n+=g.n;if(g.place)o.pl[g.place]=(o.pl[g.place]||0)+g.n});
+  const gk=Object.keys(gm).sort((a,b)=>gm[b].n-gm[a].n);
+  h+=`<div class="card"><h2>キャラクターグリーティング <span class="sp"></span><span class="badge">${gt}回</span></h2>${gk.length?gk.slice(0,5).map((k,i)=>`<div class="item"><div class="t">${esc(k)}<small>${Object.entries(gm[k].pl).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([p,n])=>esc(p)+" "+n+"回").join("・")||"場所の記録なし"}</small></div><b>${gm[k].n}回</b></div>`).join(""):'<div class="empty">この年のグリーティング記録はありません。</div>'}</div>`;
+  const sg={};D.scores.filter(s=>s.date.slice(0,4)===String(y)).forEach(s=>{(sg[K(s.park,s.name)]||(sg[K(s.park,s.name)]=[])).push(s)});
+  const ks=Object.keys(sg).sort((a,b)=>scoreStats(sg[b]).best-scoreStats(sg[a]).best);
+  h+=`<div class="card"><h2>${y}年のベストスコア</h2>${ks.length?ks.map(k=>{const st=scoreStats(sg[k]);return `<div class="item" data-act="scoreOpen" data-k="${enc(k)}"><div class="t">${esc(splitK(k)[1])}<small>${esc(splitK(k)[0])}・${st.n}回・平均 ${num(st.avg)}</small></div><b style="color:var(--pri);font-size:17px">🏆 ${num(st.best)}</b><span class="go">›</span></div>`}).join(""):'<div class="empty">この年のスコア記録はありません。</div>'}</div>`;
+  return h;
+}
+function viewRank(sub){
+  const {rides}=yearOf(sub.year),rows=rankRows(rides,sub.park);
+  return seg([["両パーク","両パーク"],...parkNames().map(p=>[p,p])],sub.park,"ranksub")+`<div class="card">${rows.length?rows.map(x=>rankItem(x,sub.park==="両パーク")).join(""):'<div class="empty">この年の乗車記録はありません。</div>'}</div>`;
+}
+function viewDayDetail(id){
+  const d=D.days.find(x=>x.id===id);if(!d)return '<div class="card"><div class="empty">記録が見つかりません。</div></div>';
+  let h=`<div class="card"><div style="font-size:20px;font-weight:800">${fmtLong(d.date)}</div><div style="margin:6px 0">${dayParks(d).map(p=>`<span class="badge">${esc(p)}</span>`).join(" ")}</div><div class="row"><button class="grow" data-act="dayEdit" data-v="${d.date}">この日の記録を編集する</button></div></div>`;
+  dayParks(d).concat(parkNames().filter(p=>false)).forEach(p=>{
+    const c=getCat(p),rides=Object.entries(d.rides).filter(([k,v])=>v>0&&splitK(k)[0]===p),shows=d.shows.filter(s=>s.park===p),scs=D.scores.filter(s=>s.date===d.date&&s.park===p);
+    h+=`<div class="card"><h2>${esc(p)} <span class="sp"></span><span class="badge">乗車 ${rides.reduce((t,e)=>t+e[1],0)}回</span></h2>`;
+    if(rides.length){
+      const areas=c?c.areas.map(a=>[a.name,a.items.map(i=>i.name)]):[];const used=new Set();
+      areas.forEach(([an,names])=>{const rr=rides.filter(([k])=>names.includes(splitK(k)[1]));if(!rr.length)return;rr.forEach(([k])=>used.add(k));h+=`<div class="sub" style="font-weight:800;margin:8px 0 0">${esc(an)}</div>${rr.map(([k,v])=>`<div class="item" data-act="attrOpen" data-k="${enc(k)}"><div class="t">${esc(splitK(k)[1])}</div><b>${v}回</b></div>`).join("")}`});
+      const rest=rides.filter(([k])=>!used.has(k));if(rest.length)h+=`<div class="sub" style="font-weight:800;margin:8px 0 0">その他</div>${rest.map(([k,v])=>`<div class="item"><div class="t">${esc(splitK(k)[1])}</div><b>${v}回</b></div>`).join("")}`;
+    }else h+=`<div class="empty">乗車の記録なし</div>`;
+    if(shows.length)h+=`<div class="sep"></div><div class="sub" style="font-weight:800">ショー・パレード</div>${shows.map(s=>`<div class="item" data-act="showEdit" data-v="${s.id}"><div class="t">${esc(s.name)}<small>${s.type}${s.spot?"・"+esc(s.spot):""}${s.note?"・"+esc(s.note):""}</small></div><div>${showBadges(s)}</div></div>`).join("")}`;
+    const gs=greetsOf(d).filter(g=>g.park===p);
+    if(gs.length)h+=`<div class="sep"></div><div class="sub" style="font-weight:800">グリーティング</div>${gs.map(g=>`<div class="item" data-act="greetEdit" data-v="${g.id}"><div class="t">${esc(g.who)}<small>${esc(g.place||"場所なし")}${g.note?"・"+esc(g.note):""}</small></div><b>${g.n}回</b></div>`).join("")}`;
+    if(scs.length)h+=`<div class="sep"></div><div class="sub" style="font-weight:800">スコア</div>${scs.map(s=>`<div class="item" data-act="scoreEdit" data-v="${s.id}"><div class="t">${esc(s.name)}<small>${esc(s.note||"")}</small></div><b>${num(s.score)}${typeof s.rate==="number"?`<small style="display:block;font-size:12px;color:var(--sub);font-weight:700;text-align:right">ヒット ${s.rate}%</small>`:""}</b></div>`).join("")}`;
+    h+=`</div>`;
+  });
+  if((d.memo||"").trim())h+=`<div class="card"><h2>メモ</h2><div style="white-space:pre-wrap;font-size:14.5px">${esc(d.memo)}</div></div>`;
+  h+=`<div class="row"><button class="danger grow" data-act="dayDel" data-v="${d.id}">この日の記録をすべて削除</button></div>`;
+  return h;
+}
+
+/* ================= 設定 ================= */
+function viewSettings(){
+  const sec=UI.setSec;
+  let h=seg([["attr","アトラクション"],["show","ショー"],["data","保存"]],sec,"setsec","small");
+  if(sec==="data")return h+`<div class="card"><h2>バックアップ</h2><div class="small" style="margin:0 0 10px">記録はこのブラウザ内に保存されます。履歴を消したり別の端末で開くと見えなくなるので、時々コピーして保管しておくと安心です。リストの編集内容も含まれます。</div><button class="grow" data-act="copyData" style="width:100%">記録をコピー</button><div class="small" id="bMsg" style="margin-top:6px"></div><div class="sep"></div><h2>復元</h2><textarea id="bText" placeholder="コピーした記録をここに貼り付け"></textarea><div class="row" style="margin-top:8px"><button class="ghost grow" data-act="restoreData">貼り付けた内容で復元(今の記録は置き換わります)</button></div><div class="small" id="bMsg2" style="margin-top:6px"></div></div>
+  <div class="card"><h2>初期化</h2><div class="small" style="margin-bottom:8px">アトラクション・ショーのリストを、公式サイトの内容(2026年11月7日時点)に戻します。過去の記録は消えません。</div><button class="danger" data-act="resetLists" style="width:100%">リストを初期状態に戻す</button></div>`;
+  const park=UI.setPark=(parkNames().includes(UI.setPark)?UI.setPark:parkNames()[0]);
+  h+=seg(parkNames().map(p=>[p,p]),park,"spark","small");
+  if(sec==="attr"){
+    const c=getCat(park);
+    h+=`<div class="small" style="margin:0 2px 10px">終了したアトラクションは「クローズ」にすると、これまでの記録を残したまま、記録画面などの一覧から隠せます(アトラクションタブの「クローズ済み」に残ります)。「×」で削除すると一覧から消え、詳細は見られなくなります(過去の記録の回数は残ります)。名前を直すと、過去の記録の名前も一緒に変わります。</div>`;
+    h+=c.areas.map((a,ai)=>`<div class="card"><div class="row"><input data-change="areaName" data-ai="${ai}" value="${esc(a.name)}" style="font-weight:800"><button class="danger" data-act="areaDel" data-ai="${ai}" style="padding:8px 12px">削除</button></div>${a.items.map((i,ii)=>`<div class="row"><input data-change="itemName" data-ai="${ai}" data-ii="${ii}" value="${esc(i.name)}"><button class="${i.closed?"":"ghost"}" data-act="itemClose" data-ai="${ai}" data-ii="${ii}" style="padding:8px 8px;font-size:12px;white-space:nowrap">クローズ</button><button class="x danger" data-act="itemDel" data-ai="${ai}" data-ii="${ii}" style="padding:8px 12px">×</button></div>`).join("")}<div class="row"><input id="newItem${ai}" placeholder="アトラクションを追加"><button class="ghost" data-act="itemAdd" data-ai="${ai}">追加</button></div></div>`).join("");
+    h+=`<div class="card"><div class="row"><input id="newArea" placeholder="エリアを追加"><button class="ghost" data-act="areaAdd">追加</button></div></div>`;
+  }else{
+    const list=D.shows.map((s,i)=>[s,i]).filter(([s])=>s.park===park);
+    h+=`<div class="small" style="margin:0 2px 10px">「抽選」にチェックすると、記録時に当選・落選と席の入力欄が出ます。期間が終わった演目は「終了」にすると、これまでの記録を残したまま記録画面の一覧から隠せます。</div>`;
+    const row=(s,i,end)=>`<div class="card"><input data-change="showName" data-i="${i}" value="${esc(s.name)}" style="font-weight:700"><div class="row"><input data-change="showType" data-i="${i}" list="showTypeList" value="${esc(s.type)}" placeholder="ジャンル" autocomplete="off" style="flex:1;min-width:0"><label class="row" style="gap:6px;white-space:nowrap;font-size:14px"><input type="checkbox" data-change="showLot" data-i="${i}" ${s.lot?"checked":""} style="width:22px;height:22px">抽選</label>${end?`<button class="ghost" data-act="showEnd" data-i="${i}" style="padding:8px 12px">再開</button><button class="danger" data-act="showDel" data-i="${i}" style="padding:8px 12px">×</button>`:`<button class="ghost" data-act="showEnd" data-i="${i}" style="padding:8px 12px">終了</button>`}</div></div>`;
+    h+=list.filter(([s])=>!s.ended).map(([s,i])=>row(s,i,false)).join("");
+    const endedL=list.filter(([s])=>s.ended);
+    h+=`<div class="card"><input id="newShow" placeholder="ショー・パレード名を追加"><div class="row"><input id="newShowType" data-keep="1" list="showTypeList" placeholder="ジャンル(選ぶか、入力)" autocomplete="off"><button class="ghost" data-act="showNew">追加</button></div><datalist id="showTypeList">${showTypeOpts().map(t=>`<option value="${esc(t)}">`).join("")}</datalist></div>`;
+    if(endedL.length)h+=`<div class="small" style="margin:14px 2px 8px;font-weight:800">終了した演目(記録画面には出ません。過去の記録は残ります)</div>`+endedL.map(([s,i])=>row(s,i,true)).join("");
+  }
+  return h;
+}
+
+/* ================= シート(ショー記録・スコア編集) ================= */
+const SEAT_CHIPS=["1階席","2階席","前方","中央","後方","立ち見"];
+function renderSheet(){
+  const s=UI.sheet,el=$("sheet");
+  if(!s){el.classList.remove("on");$("sheetBody").innerHTML="";return}
+  el.classList.add("on");
+  const b=$("sheetBody");
+  if(s.t==="show"){
+    const x=s.draft,cat=D.shows.find(z=>z.park===x.park&&z.name===x.name);
+    const spotChips=x.lot?SEAT_CHIPS:(getCat(x.park)?getCat(x.park).areas.map(a=>a.name):[]);
+    b.innerHTML=`<h3>${esc(x.name||"演目を記録")}</h3><div class="sub">${esc(x.park)}・${fmtLong(x.date)}</div>
+    ${x.name===""||!cat?`<label>演目名</label><input id="shName" value="${esc(x.name)}" placeholder="演目名" data-input="shName">`:""}
+    ${x.lot?`<label>抽選・エントリーの結果</label>${segS("res",[["none","未応募"],["wait","結果待ち"],["win","当選"],["lose","落選"]],x.res)}`:""}
+    <label>観た?</label>${segS("watched",[["seen","観た"],["skip","観ていない"]],x.watched)}
+    <label>${x.lot?"席の場所":"観た場所"}</label><input id="shSpot" value="${esc(x.spot)}" placeholder="${x.lot?"例: 2階席 前方":"例: シンデレラ城前"}" data-input="shSpot"><div class="chips" style="margin-top:8px">${spotChips.map(c=>`<button class="chip" data-act="shChip" data-v="${esc(c)}">${esc(c)}</button>`).join("")}</div>
+    <label>ひとこと</label><input id="shNote" value="${esc(x.note)}" placeholder="任意" data-input="shNote">
+    <div class="row" style="margin-top:18px"><button class="grow" data-act="sheetSave">保存</button>${s.id?`<button class="danger" data-act="sheetDel">削除</button>`:""}<button class="ghost" data-act="sheetClose">閉じる</button></div>`;
+  }else if(s.t==="greet"){
+    const x=s.draft;
+    b.innerHTML=`<h3>グリーティング</h3><div class="sub">${esc(x.park)}</div>
+    <label>誰と</label><input value="${esc(x.who)}" data-input="grWho" list="grNames" autocomplete="off">
+    <label>どこで</label><input value="${esc(x.place)}" data-input="grPlace" list="grPlaces" autocomplete="off" placeholder="任意">
+    <label>回数</label><input type="number" inputmode="numeric" min="1" value="${x.n}" data-input="grN">
+    <label>日付</label><input type="date" value="${x.date}" data-input="scDateEdit">
+    <label>ひとこと</label><input value="${esc(x.note)}" placeholder="任意" data-input="scNoteEdit">
+    <div class="row" style="margin-top:18px"><button class="grow" data-act="sheetSave">保存</button><button class="danger" data-act="sheetDel">削除</button><button class="ghost" data-act="sheetClose">閉じる</button></div>`;
+  }else if(s.t==="score"){
+    const x=s.draft;
+    b.innerHTML=`<h3>${esc(x.name)}</h3><div class="sub">${esc(x.park)}</div>
+    <label>スコア</label><input id="scEditVal" type="number" inputmode="numeric" value="${x.score}" data-input="scVal">
+    <label>ヒット率(%)</label><input type="number" inputmode="decimal" step="0.1" value="${typeof x.rate==="number"?x.rate:""}" placeholder="任意" data-input="scRate">
+    <label>日付</label><input type="date" value="${x.date}" data-input="scDateEdit">
+    <label>ひとこと</label><input value="${esc(x.note)}" placeholder="任意" data-input="scNoteEdit">
+    <div class="row" style="margin-top:18px"><button class="grow" data-act="sheetSave">保存</button><button class="danger" data-act="sheetDel">削除</button><button class="ghost" data-act="sheetClose">閉じる</button></div>`;
+  }
+}
+function segS(field,items,cur){return `<div class="seg">${items.map(([v,l])=>`<button data-act="shSet" data-f="${field}" data-v="${v}" class="${v===cur?"on":""}">${l}</button>`).join("")}</div>`}
+
+/* ================= 描画 ================= */
+const TITLES={home:"🏰 パーク記録帳",record:"記録",attr:"アトラクション",score:"スコア",archive:"アーカイブ"};
+function render(){
+  const keep={};document.querySelectorAll("#view [data-keep]").forEach(i=>{if(i.value!=="")keep[i.id]=i.value});
+  let title=TITLES[UI.tab],html;
+  if(UI.sub){
+    const s=UI.sub;
+    if(s.t==="attr"){const f=findItem(...splitK(s.k));title=f?f.item.name:"アトラクション";html=viewAttrDetail(s.k)}
+    else if(s.t==="day"){const d=D.days.find(x=>x.id===s.id);title=d?fmtShort(d.date)+" の記録":"記録";html=viewDayDetail(s.id)}
+    else if(s.t==="score"){title="スコア履歴";html=viewScoreDetail(s.k)}
+    else if(s.t==="rank"){title=s.year+"年 回数ランキング";html=viewRank(s)}
+    else if(s.t==="settings"){title="設定";html=viewSettings()}
+  }else html=({home:viewHome,record:viewRecord,attr:viewAttr,score:viewScore,archive:viewArchive})[UI.tab]();
+  $("title").textContent=title;
+  $("view").innerHTML=html;
+  Object.keys(keep).forEach(id=>{const e=$(id);if(e)e.value=keep[id]});
+  $("backBtn").style.display=UI.sub?"":"none";
+  $("gearBtn").style.display=UI.sub?"none":"";
+  $("undoBtn").disabled=!undoStack.length;$("redoBtn").disabled=!redoStack.length;$("undoBtn").title=undoStack.length?"取り消す: "+undoStack[undoStack.length-1].l:"";$("redoBtn").title=redoStack.length?"やり直す: "+redoStack[redoStack.length-1].l:"";
+  document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("on",!UI.sub&&b.dataset.t===UI.tab));
+  renderSheet();
+}
+
+/* ================= 操作 ================= */
+function setRide(k,delta){
+  const [p]=splitK(k);
+  mutate(()=>{const d=ensureDay(UI.date),n=Math.max(0,(d.rides[k]||0)+delta);if(n)d.rides[k]=n;else delete d.rides[k]},null,splitK(k)[1]+(delta>0?" ＋1":" −1"));
+}
+function newDraft(name){
+  const cat=D.shows.find(z=>z.park===UI.park&&z.name===name);
+  return {id:null,park:UI.park,name:name||"",type:cat?cat.type:"その他",lot:cat?cat.lot:false,date:UI.date,res:cat&&cat.lot?"wait":"",watched:"",spot:"",note:""};
+}
+const ACT={
+  tab:el=>goTab(el.dataset.t),
+  back:()=>goBack(),
+  gear:()=>{UI.sub={t:"settings"};UI.stack=[];render();scrollTo(0,0)},
+  undo:()=>undo(),
+  redo:()=>redo(),
+  startToday:()=>{UI.date=todayStr();UI.rsec="rides";goTab("record")},
+  dateShift:el=>{UI.date=addDays(UI.date,+el.dataset.v);render()},
+  dateToday:()=>{UI.date=todayStr();render()},
+  rpark:el=>{D.ui.park=el.dataset.v;save();render()},
+  rsec:el=>{UI.rsec=el.dataset.v;render()},
+  tog:el=>{const k=dec(el.dataset.v),area=el.parentElement,was=area.classList.contains("open");UI.open[k]=!was;area.classList.toggle("open",!was)},
+  inc:el=>setRide(dec(el.dataset.k),1),
+  dec:el=>setRide(dec(el.dataset.k),-1),
+  attrOpen:el=>openSub({t:"attr",k:dec(el.dataset.k)}),
+  apark:el=>{UI.attrPark=el.dataset.v;render()},
+  attrEdit:()=>{UI.attrEdit=!UI.attrEdit;render()},
+  fav:el=>{const f=findItem(...splitK(dec(el.dataset.k)));if(f)mutate(()=>{f.item.fav=!f.item.fav},null)},
+  dayOpen:el=>openSub({t:"day",id:el.dataset.v}),
+  dayOpenDate:el=>{const d=dayOf(el.dataset.v);if(d)openSub({t:"day",id:d.id})},
+  dayEdit:el=>{UI.date=el.dataset.v;UI.rsec="rides";goTab("record")},
+  dayDel:el=>confirmTap(el,()=>{const id=el.dataset.v;mutate(()=>{const d=D.days.find(x=>x.id===id);if(d){D.scores=D.scores.filter(s=>s.date!==d.date);D.days=D.days.filter(x=>x.id!==id)}},"削除しました","この日の記録の削除");UI.sub=null;UI.stack=[];render()},"もう一度タップで削除"),
+  yearShift:el=>{UI.year+=+el.dataset.v;render()},
+  rankpark:el=>{UI.rankPark=el.dataset.v;render()},
+  rankOpen:()=>openSub({t:"rank",year:UI.year,park:UI.rankPark}),
+  ranksub:el=>{UI.sub.park=el.dataset.v;render()},
+  arseg:el=>{UI.arSeg=el.dataset.v;render()},
+  arSegGo:el=>{UI.arSeg=el.dataset.v;goTab("archive")},
+  scoreOpen:el=>openSub({t:"score",k:dec(el.dataset.k)}),
+  scoreAdd:el=>{
+    const i=+el.dataset.i,t=D.targets[i],inp=$("sc"+i),v=inp&&inp.value.trim();if(!t||v===""||isNaN(+v))return;
+    const prev=scoreGroups()[K(t.park,t.name)],oldBest=prev?scoreStats(prev).best:null,val=Math.round(+v);
+    const ri=$("sr"+i),rv=ri?ri.value.trim():"",rate=rv===""||isNaN(+rv)?null:Math.min(100,Math.max(0,Math.round(+rv*10)/10));
+    inp.value="";if(ri)ri.value="";
+    mutate(()=>{const rec={id:uid(),date:UI.scDate,park:t.park,name:t.name,score:val,note:""};if(rate!==null)rec.rate=rate;D.scores.push(rec)},oldBest!==null&&val>oldBest?`🏆 ベスト更新！ ${num(val)}`:`記録しました: ${num(val)}`,"スコア記録: "+t.name);
+  },
+  grChip:el=>{const i=$("grWho");if(i)i.value=el.dataset.v},
+  grAdd:()=>{
+    const wi=$("grWho"),pi=$("grPlace"),who=wi?wi.value.trim():"",place=pi?pi.value.trim():"";if(!who){wi&&wi.focus();return}
+    const park=UI.park;wi.value="";pi.value="";
+    mutate(()=>{const d=ensureDay(UI.date);d.greets=d.greets||[];const f=d.greets.find(g=>g.park===park&&g.who===who&&g.place===place);if(f)f.n++;else d.greets.push({id:uid(),park,who,place,n:1,note:""})},who+" に会いました","グリーティング記録: "+who);
+  },
+  greetInc:el=>mutate(()=>{const g=greetsOf(dayOf(UI.date)).find(x=>x.id===el.dataset.v);if(g)g.n++},null,"グリーティング ＋1"),
+  greetDec:el=>mutate(()=>{const d=dayOf(UI.date),g=greetsOf(d).find(x=>x.id===el.dataset.v);if(!g)return;if(g.n>1)g.n--;else d.greets=d.greets.filter(x=>x!==g)},null,"グリーティング −1"),
+  greetEdit:el=>{let f=null;D.days.forEach(d=>greetsOf(d).forEach(g=>{if(g.id===el.dataset.v)f={g,d}}));if(!f)return;UI.sheet={t:"greet",id:f.g.id,draft:{...f.g,date:f.d.date}};renderSheet()},
+  scManage:()=>{UI.scManage=!UI.scManage;render()},
+  scpark:el=>{UI.scPark=el.dataset.v;render()},
+  scoreEdit:el=>{const s=D.scores.find(x=>x.id===el.dataset.v);if(!s)return;UI.sheet={t:"score",id:s.id,draft:{...s}};renderSheet()},
+  showAdd:el=>{UI.sheet={t:"show",id:null,draft:newDraft(dec(el.dataset.n))};renderSheet()},
+  showQuick:el=>{const name=dec(el.dataset.n),dr=newDraft(name);mutate(()=>{ensureDay(UI.date).shows.push({id:uid(),park:dr.park,name,type:dr.type,lot:dr.lot,res:"",watched:"seen",spot:"",note:""})},"「観た」で記録しました","観た: "+name)},
+  showEdit:el=>{let f=null;D.days.forEach(d=>d.shows.forEach(s=>{if(s.id===el.dataset.v)f={s,d}}));if(!f)return;UI.sheet={t:"show",id:f.s.id,draft:{...f.s,date:f.d.date}};renderSheet()},
+  shSet:el=>{const x=UI.sheet.draft,f=el.dataset.f,v=el.dataset.v;x[f]=x[f]===v?"":v;renderSheet()},
+  shChip:el=>{const x=UI.sheet.draft,v=el.dataset.v;x.spot=x.spot?(x.spot.includes(v)?x.spot:x.spot+" "+v):v;$("shSpot").value=x.spot},
+  sheetClose:()=>{UI.sheet=null;renderSheet()},
+  sheetSave:()=>{
+    const s=UI.sheet,x=s.draft;
+    if(s.t==="show"){
+      if(!x.name.trim())return;
+      mutate(()=>{
+        D.days.forEach(d=>{d.shows=d.shows.filter(z=>z.id!==s.id)});
+        const rec={id:s.id||uid(),park:x.park,name:x.name.trim(),type:x.type,lot:x.lot,res:x.res,watched:x.watched,spot:x.spot,note:x.note};
+        ensureDay(x.date).shows.push(rec);
+      },"保存しました","演目の記録: "+x.name.trim());
+    }else if(s.t==="greet"){
+      const who=(x.who||"").trim(),n=Math.max(1,Math.round(+x.n)||1);if(!who)return;
+      mutate(()=>{D.days.forEach(d=>{d.greets=greetsOf(d).filter(z=>z.id!==s.id)});ensureDay(x.date).greets.push({id:s.id,park:x.park,who,place:(x.place||"").trim(),n,note:x.note||""})},"保存しました","グリーティングの修正");
+    }else{
+      const v=Math.round(+x.score);if(isNaN(v)||String(x.score)==="")return;
+      mutate(()=>{const t=D.scores.find(z=>z.id===s.id);if(t){t.score=v;t.date=x.date||t.date;t.note=x.note||"";const rr=String(x.rate==null?"":x.rate).trim();if(rr===""||isNaN(+rr))delete t.rate;else t.rate=Math.min(100,Math.max(0,Math.round(+rr*10)/10))}},"保存しました","スコアの修正");
+    }
+    UI.sheet=null;renderSheet();
+  },
+  sheetDel:()=>{
+    const s=UI.sheet;
+    mutate(()=>{if(s.t==="show")D.days.forEach(d=>{d.shows=d.shows.filter(z=>z.id!==s.id)});else if(s.t==="greet")D.days.forEach(d=>{d.greets=greetsOf(d).filter(z=>z.id!==s.id)});else D.scores=D.scores.filter(z=>z.id!==s.id)},"削除しました","削除");
+    UI.sheet=null;renderSheet();
+  },
+  /* 設定 */
+  setsec:el=>{UI.setSec=el.dataset.v;render()},
+  spark:el=>{UI.setPark=el.dataset.v;render()},
+  areaAdd:()=>{const v=$("newArea").value.trim();if(!v)return;mutate(()=>{getCat(UI.setPark).areas.push({name:v,items:[]})})},
+  areaDel:el=>confirmTap(el,()=>mutate(()=>{getCat(UI.setPark).areas.splice(+el.dataset.ai,1)}),"本当に削除"),
+  itemAdd:el=>{const ai=+el.dataset.ai,v=$("newItem"+ai).value.trim();if(!v)return;mutate(()=>{getCat(UI.setPark).areas[ai].items.push(A(v,"","","","","","",""))})},
+  itemClose:el=>mutate(()=>{const it=getCat(UI.setPark).areas[+el.dataset.ai].items[+el.dataset.ii];it.closed=!it.closed},null),
+  itemDel:el=>confirmTap(el,()=>mutate(()=>{getCat(UI.setPark).areas[+el.dataset.ai].items.splice(+el.dataset.ii,1)}),"削除?"),
+  showNew:()=>{const v=$("newShow").value.trim();if(!v)return;const t=$("newShowType").value.trim()||"その他";mutate(()=>{D.shows.push(SH(UI.setPark,v,t,false,""))})},
+  showEnd:el=>mutate(()=>{const x=D.shows[+el.dataset.i];x.ended=!x.ended},null),
+  showDel:el=>confirmTap(el,()=>mutate(()=>{D.shows.splice(+el.dataset.i,1)}),"削除?"),
+  resetLists:el=>confirmTap(el,()=>mutate(()=>{D.cat=defaultCat();D.shows=defaultShows()},"初期状態に戻しました"),"もう一度タップで初期化"),
+  copyData:async()=>{const t=JSON.stringify(D);try{await navigator.clipboard.writeText(t);$("bMsg").textContent="コピーしました。メモ帳などに貼って保管してください。"}catch(e){$("bText")&&($("bText").value=t);$("bMsg").textContent="自動コピーできなかったので、下の欄に出しました。全選択してコピーしてください。";$("bText").select()}},
+  restoreData:()=>{try{const x=JSON.parse($("bText").value);if(!x||!Array.isArray(x.days))throw 0;D=x;D.ui=D.ui||{park:"ランド"};D.scores=D.scores||[];D.targets=D.targets||[];if(!D.cat)D.cat=defaultCat();if(!D.shows)D.shows=defaultShows();undoStack.length=0;redoStack.length=0;save();render();$("bMsg2")&&($("bMsg2").textContent="復元しました。")}catch(e){$("bMsg2").textContent="読み込めませんでした。コピーした内容をそのまま貼り付けてください。"}}
+};
+document.addEventListener("click",e=>{
+  const el=e.target.closest("[data-act]");if(!el)return;
+  const f=ACT[el.dataset.act];if(f)f(el,e);
+});
+/* change / input */
+function renameEverywhere(p,oldN,newN){
+  D.days.forEach(d=>{const k=K(p,oldN);if(k in d.rides){const nk=K(p,newN);d.rides[nk]=(d.rides[nk]||0)+d.rides[k];delete d.rides[k]}});
+  D.scores.forEach(s=>{if(s.park===p&&s.name===oldN)s.name=newN});
+  D.targets.forEach(t=>{if(t.park===p&&t.name===oldN)t.name=newN});
+}
+document.addEventListener("change",e=>{
+  const t=e.target,c=t.dataset.change;if(!c)return;
+  const v=t.value;
+  if(c==="date"){if(v){UI.date=v;render()}}
+  else if(c==="scDate"){if(v)UI.scDate=v}
+  else if(c==="target"){const [p,n]=splitK(dec(t.dataset.k));mutate(()=>{if(t.checked){if(!D.targets.some(x=>x.park===p&&x.name===n))D.targets.push({park:p,name:n})}else D.targets=D.targets.filter(x=>!(x.park===p&&x.name===n))},null)}
+  else if(c==="attrf"){const f=findItem(...splitK(dec(t.dataset.k)));if(!f)return;const key=t.dataset.f;mutate(()=>{f.item[key]=key==="tags"?v.split(/[,、]/).map(s=>s.trim()).filter(Boolean):v},null)}
+  else if(c==="areaName"){if(v.trim())mutate(()=>{getCat(UI.setPark).areas[+t.dataset.ai].name=v.trim()},null);else render()}
+  else if(c==="itemName"){const a=getCat(UI.setPark).areas[+t.dataset.ai],it=a.items[+t.dataset.ii],nv=v.trim();if(!nv||nv===it.name){render();return}mutate(()=>{const old=it.name;it.name=nv;renameEverywhere(UI.setPark,old,nv)},null)}
+  else if(c==="showName"){const s=D.shows[+t.dataset.i],nv=v.trim();if(!nv){render();return}mutate(()=>{s.name=nv},null)}
+  else if(c==="showType"){const nv=v.trim()||"その他";mutate(()=>{D.shows[+t.dataset.i].type=nv},null)}
+  else if(c==="showLot"){mutate(()=>{D.shows[+t.dataset.i].lot=t.checked},null)}
+  else if(c==="showPeriod"){mutate(()=>{D.shows[+t.dataset.i].period=v},null)}
+});
+document.addEventListener("input",e=>{
+  const t=e.target,c=t.dataset.input;if(!c)return;const v=t.value;
+  if(c==="dayMemo"){const d=ensureDay(UI.date);d.memo=v;save()}
+  else if(c==="attrQ"){UI.attrQ=v;$("attrList").innerHTML=attrListHTML()}
+  else if(c==="attrMemo"){const f=findItem(...splitK(dec(t.dataset.k)));if(f){f.item.memo=v;save()}}
+  else if(UI.sheet){const x=UI.sheet.draft;
+    if(c==="shName")x.name=v;else if(c==="shSpot")x.spot=v;else if(c==="shNote")x.note=v;
+    else if(c==="scVal")x.score=v;else if(c==="grWho")x.who=v;else if(c==="grPlace")x.place=v;else if(c==="grN")x.n=v;else if(c==="scRate")x.rate=v;else if(c==="scDateEdit")x.date=v;else if(c==="scNoteEdit")x.note=v}
+});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Enter"&&e.target.dataset&&e.target.dataset.enter!==undefined){const b=document.querySelector(`[data-act="scoreAdd"][data-i="${e.target.dataset.enter}"]`);if(b)b.click()}
+});
+
+render();
+</script>
+</body>
+</html>
